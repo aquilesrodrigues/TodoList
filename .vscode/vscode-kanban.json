@@ -16,7 +16,26 @@
     }
   ],
   "in-progress": [],
-  "testing": [],
+  "testing": [
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T03:56:38.911Z",
+      "description": {
+        "content": "node_modules/",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "Criar o arquivo .gitignore, na raiz do repositório para que não seja enviado ao github os módulos das dependências do node",
+        "mime": "text/markdown"
+      },
+      "id": "4",
+      "references": [],
+      "title": ".GITIGNORE"
+    }
+  ],
   "todo": [
     {
       "assignedTo": {
@@ -25,16 +44,48 @@
       "category": "CONFIGURAR",
       "creation_time": "2020-08-22T03:05:23.302Z",
       "description": {
-        "content": "npm init -y",
+        "content": "npm init",
         "mime": "text/markdown"
       },
       "details": {
-        "content": "na pasta do projeto e repositório iremos executar este comando",
+        "content": "na pasta do projeto e repositório iremos executar este comando:\nnpm init\nsem inserir o -y para que possamos determinar os detalhes de localização, versão e outros do projeto node",
         "mime": "text/markdown"
       },
       "id": "2",
       "references": [],
       "title": "Iniciar um projeto Node"
+    },
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T03:52:06.971Z",
+      "description": {
+        "content": "npm i -s express",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "desta forma o express vai ser instalado em sua última versão.",
+        "mime": "text/markdown"
+      },
+      "id": "3",
+      "references": [],
+      "title": "Instalar o EXPRESS"
+    },
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T17:00:33.397Z",
+      "description": {
+        "content": "Insomnia - cria ambiente de consulta das requisições pelos métodos sem a interface ",
+        "mime": "text/markdown"
+      },
+      "id": "5",
+      "references": [],
+      "title": "Instalar o INSOMNIA"
     }
   ]
 }
