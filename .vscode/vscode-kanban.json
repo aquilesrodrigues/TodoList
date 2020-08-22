@@ -1,6 +1,40 @@
 {
-  "todo": [],
+  "done": [
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAR",
+      "creation_time": "2020-08-22T02:58:43.483Z",
+      "description": {
+        "content": "Configurar o Workspace fora da pasta do projeto",
+        "mime": "text/markdown"
+      },
+      "id": "1",
+      "references": [],
+      "title": "Configurar Workspace"
+    }
+  ],
   "in-progress": [],
   "testing": [],
-  "done": []
+  "todo": [
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAR",
+      "creation_time": "2020-08-22T03:05:23.302Z",
+      "description": {
+        "content": "npm init -y",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "na pasta do projeto e repositório iremos executar este comando",
+        "mime": "text/markdown"
+      },
+      "id": "2",
+      "references": [],
+      "title": "Iniciar um projeto Node"
+    }
+  ]
 }
