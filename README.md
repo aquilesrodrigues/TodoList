@@ -5,7 +5,7 @@
 
 ~~~shell
 ```npm init  -y```
-
+~~~
 :left_speech_bubble: _O comando acima, faz uma série de pergunta para começar um projeto node. Para evitar estas perguntas basta inserir a flag **-y** (sim) para criar tudo sem a confirmação do usuário._
 
 - [x] tarefa 1, #refs,
