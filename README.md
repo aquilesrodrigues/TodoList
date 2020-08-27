@@ -5,7 +5,7 @@
 
 ```npm init  -y```
 
-_faz uma série de pergunta para começar um projeto node, Insira o **-y** (sim) para tudo._
+:left_speech_bubble: _O comando acima, faz uma série de pergunta para começar um projeto node. Para evitar estas perguntas basta inserir a flag **-y** (sim) para criar tudo sem a confirmação do usuário._
 
 - [x] tarefa 1, #refs,
 - [x] lista de sintaxe é requerida
@@ -23,4 +23,7 @@ npm i -S express
 /node_modules
 package-lock.json
 
-#1 No momento todo o trabalho está acardo de @aquilesrodrigues
+#1 No momento todo o trabalho está acardo de @aquilesrodrigues 
+:mail: aquiles.silva@a.ficr.edu.br
+:green_circle: 
+:triangular_flag_on_post:
