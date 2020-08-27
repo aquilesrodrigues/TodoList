@@ -15,7 +15,6 @@ Coluna 1 | Coluna 2
 --------------|--------------
 exemplo 1 | Exemplo 2
 
-
 // vai no repositório e pega a última versão do módulo EXPRESS )
 npm i -S express
 //após instalação ele cria uma pasta com todas as dependências do módulo EXPRESS e um arquivo json:
@@ -23,7 +22,10 @@ npm i -S express
 /node_modules
 package-lock.json
 
-#1 No momento todo o trabalho está acardo de @aquilesrodrigues
-- :mail: aquiles.silva@a.ficr.edu.br
-+ conteúdo a ser inserido :green_circle:
+#1 No momento todo o trabalho está a cargo de @aquilesrodrigues
+
+:e-mail: aquiles.silva@a.ficr.edu.br
+
+conteúdo a ser inserido :green_circle:
+
 :triangular_flag_on_post: conteúdo a ser inserido
