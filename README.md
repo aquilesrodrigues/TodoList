@@ -17,12 +17,16 @@ npm init  -y
 
 :left_speech_bubble: _No shell, utilizar o **NPM** (O Gerenciador de pacotes do node) com o comando acima, ele se encarrega de inicializar um projeto novo em node. o **-y**  faz ele ignorar uma série de perguntas para começar o projeto. Será tudo automático!_
 
-> Como saída teremos o arquvo package.json com as configurações básicas criadas:
+> :vertical_traffic_light: Como saída teremos o arquvo package.json com as configurações básicas criadas.
 
 ~~~Javascript
-17min 
-
+npm i -S express
 ~~~
+
+:left_speech_bubble: _O comando acima instala o nosso primeiro módulo Express._
+
+> :vertical_traffic_light: Como saída teremos uma pasta /node_modules contendo o pacote instalado e todos as demais dependências e também o arquivo package-lock.json.
+
 
 Coluna 1 | Coluna 2
 :-------------- | :--------------
