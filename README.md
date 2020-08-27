@@ -3,6 +3,7 @@
 
 1. Inciar projeto **NODE**
 
+~~~shell
 ```npm init  -y```
 
 :left_speech_bubble: _O comando acima, faz uma série de pergunta para começar um projeto node. Para evitar estas perguntas basta inserir a flag **-y** (sim) para criar tudo sem a confirmação do usuário._
@@ -22,7 +23,7 @@ npm i -S express
 /node_modules
 package-lock.json
 
-#1 No momento todo o trabalho está a cargo de @aquilesrodrigues
-:e-mail: aquiles.silva@a.ficr.edu.br
-conteúdo a ser inserido :green_circle:
-:triangular_flag_on_post: conteúdo a ser inserido
+>No momento todo o trabalho está a cargo de @aquilesrodrigues
+>E-mail :e-mail: aquiles.silva@a.ficr.edu.br
+>conteúdo a ser inserido :green_circle:
+> :triangular_flag_on_post: conteúdo a ser inserido
