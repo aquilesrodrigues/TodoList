@@ -5,6 +5,24 @@
         "name": "Aquiles Rodrigues"
       },
       "category": "CONFIGURAR",
+      "creation_time": "2020-08-22T03:05:23.302Z",
+      "description": {
+        "content": "npm init",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "No shell, utilizar o NPM (O Gerenciador de pacotes do node) com o comando acima, ele se encarrega de inicializar um projeto novo em node. o -y faz ele ignorar uma série de perguntas para começar o projeto. Será tudo automático!\n Como saída teremos o arquvo package.json com as configurações básicas criadas.\n \nnpm init  -y",
+        "mime": "text/markdown"
+      },
+      "id": "2",
+      "references": [],
+      "title": "2 - Iniciar um projeto Node"
+    },
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAR",
       "creation_time": "2020-08-22T02:58:43.483Z",
       "description": {
         "content": "Configurar o Workspace fora da pasta do projeto",
@@ -13,10 +31,7 @@
       "id": "1",
       "references": [],
       "title": "Configurar Workspace"
-    }
-  ],
-  "in-progress": [],
-  "testing": [
+    },
     {
       "assignedTo": {
         "name": "Aquiles Rodrigues"
@@ -33,9 +48,11 @@
       },
       "id": "4",
       "references": [],
-      "title": "4 - .GITIGNORE"
+      "title": "3 - .GITIGNORE"
     }
   ],
+  "in-progress": [],
+  "testing": [],
   "todo": [
     {
       "assignedTo": {
@@ -54,24 +71,6 @@
       "id": "11",
       "references": [],
       "title": "10 - Criar banco de Dados"
-    },
-    {
-      "assignedTo": {
-        "name": "Aquiles Rodrigues"
-      },
-      "category": "CONFIGURAR",
-      "creation_time": "2020-08-22T03:05:23.302Z",
-      "description": {
-        "content": "npm init",
-        "mime": "text/markdown"
-      },
-      "details": {
-        "content": "na pasta do projeto e repositório iremos executar este comando:\nnpm init\nsem inserir o -y para que possamos determinar os detalhes de localização, versão e outros do projeto node",
-        "mime": "text/markdown"
-      },
-      "id": "2",
-      "references": [],
-      "title": "3 - Iniciar um projeto Node"
     },
     {
       "assignedTo": {

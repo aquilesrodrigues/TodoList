@@ -4,12 +4,20 @@
 
 ### Preparação do ambiente de trabalho
 
-- [x] Preparar ambiente do projeto **NODE**
-- [x] Personalizar os arquivos: 
+- [x] 1. Preparar ambiente do projeto **NODE**
+- [x] 2. Iniciar um projeto Node
+- [x] 3. Criar arquivo .GITIGNORE
+- [x] 4. Instalar o EXPRESS
+- [x] Iniciar um projeto Node
+- [x] Iniciar um projeto Node
 - [ ] item incompleto
 
 
-1. Inciar projeto **NODE**
+1. Preparar o ambiente do projeto **NODE**
+    1. Você deve instalar  o editor, o git, configurar uma conta no github para poder executar os demais passos do seu projeto.
+    2. Após concluir todos os pre-requisitos acima continue
+ 
+2. Inciar projeto **NODE**
 
 ~~~cmder
 npm init  -y
@@ -18,6 +26,14 @@ npm init  -y
 :left_speech_bubble: _No shell, utilizar o **NPM** (O Gerenciador de pacotes do node) com o comando acima, ele se encarrega de inicializar um projeto novo em node. o **-y**  faz ele ignorar uma série de perguntas para começar o projeto. Será tudo automático!_
 
 > :vertical_traffic_light: Como saída teremos o arquvo package.json com as configurações básicas criadas.
+
+Actual: 3. Criar arquivo .GITIGNORE
+
+:left_speech_bubble: _em Em seu editor de texto criar o arquivo .gitignore de dentro dele inserir a linha node_modules_
+
+> :vertical_traffic_light: Como saída teremos o arquvo package.json com as configurações básicas criadas. node_modules/
+
+4. f 
 
 ~~~Javascript
 npm i -S express
