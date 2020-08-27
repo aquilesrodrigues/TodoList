@@ -31,9 +31,9 @@ Actual: 3. Criar arquivo .GITIGNORE
 
 :left_speech_bubble: _em Em seu editor de texto criar o arquivo .gitignore de dentro dele inserir a linha node_modules_
 
-> :vertical_traffic_light: Como saída teremos o arquvo package.json com as configurações básicas criadas. node_modules/
+> :vertical_traffic_light: Como saída teremos o arquvo .gitignore com as configurações básicas criadas. node_modules/ que informa ao git para não enviar ao github os módulos do node
 
-4. f 
+Actual: 4. Instalar o EXPRESS
 
 ~~~Javascript
 npm i -S express
