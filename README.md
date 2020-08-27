@@ -1,12 +1,16 @@
 # TodoList
+
 ## Repositório principal do projeto **TODOLIST-PROJ**
 
 1. Inciar projeto **NODE**
 
 ~~~shell
-Esta é uma linha de código em Node
+npm init  -y
 ~~~
-```npm init  -y```
+
+~~~cmder
+npm init  -y
+~~~
 
 :left_speech_bubble: _O comando acima, faz uma série de pergunta para começar um projeto node. Para evitar estas perguntas basta inserir a flag **-y** (sim) para criar tudo sem a confirmação do usuário._
 
@@ -29,3 +33,4 @@ package-lock.json
 >E-mail :e-mail: aquiles.silva@a.ficr.edu.br
 >conteúdo a ser inserido :green_circle:
 > :triangular_flag_on_post: conteúdo a ser inserido
+>
