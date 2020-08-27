@@ -33,10 +33,28 @@
       },
       "id": "4",
       "references": [],
-      "title": ".GITIGNORE"
+      "title": "4 - .GITIGNORE"
     }
   ],
   "todo": [
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T21:37:23.113Z",
+      "description": {
+        "content": "npx sequelize db:migrate",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "Agora vamos aproveitar toda a estrutura criada e executar o comando para criação do banco:\n\nnpx sequelize db:migrate\n\n",
+        "mime": "text/markdown"
+      },
+      "id": "11",
+      "references": [],
+      "title": "10 - Criar banco de Dados"
+    },
     {
       "assignedTo": {
         "name": "Aquiles Rodrigues"
@@ -53,7 +71,97 @@
       },
       "id": "2",
       "references": [],
-      "title": "Iniciar um projeto Node"
+      "title": "3 - Iniciar um projeto Node"
+    },
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T18:29:37.451Z",
+      "description": {
+        "content": "npm i -S sequelize\nnpm i -D sequelize-cli",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "Na pasta raiz do repositório(TodoList) digitar o comando:\n\nnpm i -S sequelize\n\ne como estamos em ambiente de desenvolvimento também instalar com o flag -D para informar que é apenas em modo desenvolvimento\n\nnpm i -D sequelize-cli\n\nAgora criar o arquivo s configura algumas informações no momento que estamos utilizando o cli do Sequelize (este não é obrigatório).\nEx. Const path = require('path') - vai ajudar a tratar caminhos\n",
+        "mime": "text/markdown"
+      },
+      "id": "6",
+      "references": [],
+      "title": "5 - Instalar o SEQUELIZE"
+    },
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T19:17:57.463Z",
+      "description": {
+        "content": "npx sequelize init",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "O NPX serve para executar pacotes sem estarem instalados!\nnpx sequelize init\n\nAntes devemos ter criado o arquivo sequelizerc para ele criar a estrutura de pastas config, models, migrations e seeders",
+        "mime": "text/markdown"
+      },
+      "id": "7",
+      "references": [],
+      "title": "6 - Executar o NPX"
+    },
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T19:44:41.466Z",
+      "description": {
+        "content": "=sequelizers=\nCaminhos:\n------------------------\nconfig (config.json);\nmodels;\nmigrations;\nseeders.",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "const path = requere('path')\nmodule.exports = {\n\"config\": path.resolve('./src/config', 'config.json'),\n\"models-path\": path.resolve('./src/models'),\n\"migrations-path\": path.resolve('./src/migrations'),\n\"seeders-path\": path.resolve('./src/seeders')\n}\nou utilizar o path.join\n\n\n",
+        "mime": "text/markdown"
+      },
+      "id": "8",
+      "references": [],
+      "title": "7 - Criar arquivo SEQUELIZERC"
+    },
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T19:56:39.209Z",
+      "description": {
+        "content": "arquivo:\nconfig.json\ndesenvolvimento,\nteste e\nprodução",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "Editar o arquivo criado automáticamente anteriormente na pasta config/config.json\n\n{\n  \"development\": {\n    \"storage\": \"./todolist.sqlite3\",\n    \"dialect\": \"sqlite\"\n  },\n  \"test\": {\n    \"storage\": \"./todolist.sqlite3\",\n    \"dialect\": \"sqlite\"\n  },\n  \"production\": {\n    \"storage\": \"./todolist.sqlite3\",\n    \"dialect\": \"sqlite\"\n  }\n}",
+        "mime": "text/markdown"
+      },
+      "id": "9",
+      "references": [],
+      "title": "8 - Editar CONFIG.json"
+    },
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T20:19:02.585Z",
+      "description": {
+        "content": "npx sequelize model:generate \n--name Usuario\n--attributes nome:string,email:string",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "Neste passo criamos a estrutura do modelo para o banco de dados\n\nno prompt de comando digitar\n\nnpx sequelize model:generate --name Usuario --attributes nome:string,email:string\nAssim que este comando é executado o sequelize cria na pasta models o arquivo usuarios.js e na pasta migrations\no arquivo com timestemp e em sua estrutura comandos para criar as tabelas e seus campos informados no comando acima.\nEm seu padrão vai ser criado 2 campos nativos que são:\ncreatedAt, updatedAt e uma chave primária caso não seja informado.",
+        "mime": "text/markdown"
+      },
+      "id": "10",
+      "references": [],
+      "title": "9 - Criar estrutura para o DB Usuário"
     },
     {
       "assignedTo": {
