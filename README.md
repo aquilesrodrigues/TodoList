@@ -23,9 +23,6 @@ npm i -S express
 package-lock.json
 
 #1 No momento todo o trabalho está a cargo de @aquilesrodrigues
-
 :e-mail: aquiles.silva@a.ficr.edu.br
-
 conteúdo a ser inserido :green_circle:
-
 :triangular_flag_on_post: conteúdo a ser inserido
