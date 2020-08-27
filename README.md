@@ -2,11 +2,14 @@
 
 ## Repositório principal do projeto **TODOLIST-PROJ**
 
-1. Inciar projeto **NODE**
+### Preparação do ambiente de trabalho
 
-~~~shell
-npm init  -y
-~~~
+- [x] Iniciar projeto **NODE**
+- [x] lista2
+- [ ] item incompleto
+
+
+1. Inciar projeto **NODE**
 
 ~~~cmder
 npm init  -y
@@ -14,17 +17,18 @@ npm init  -y
 
 :left_speech_bubble: _O comando acima, faz uma série de pergunta para começar um projeto node. Para evitar estas perguntas basta inserir a flag **-y** (sim) para criar tudo sem a confirmação do usuário._
 
-- [x] tarefa 1, #refs,
-- [x] lista de sintaxe é requerida
-- [ ] item incompleto
 
 Coluna 1 | Coluna 2
---------------|--------------
+:-------------- | :--------------
 exemplo 1 | Exemplo 2
 
-// vai no repositório e pega a última versão do módulo EXPRESS )
+:left_speech_bubble: _Vai no repositório e pega a última versão do módulo EXPRESS_
+
+~~~cmder
 npm i -S express
-//após instalação ele cria uma pasta com todas as dependências do módulo EXPRESS e um arquivo json:
+~~~
+
+:left_speech_bubble: _após instalação ele cria uma pasta com todas as dependências do módulo EXPRESS e um arquivo json:_
 
 /node_modules
 package-lock.json
