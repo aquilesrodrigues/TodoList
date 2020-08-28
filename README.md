@@ -43,8 +43,8 @@
     :left_speech_bubble: _O comando acima instala o módulo Express do NODE._
 
     > :vertical_traffic_light: Como saída teremos uma pasta **/node_modules** contendo o pacote instalado e todos as demais dependências, também o arquivo package-lock.json e o server.js.
-    > :exclamation: O Registro abaixo :point_down: foi criado dentro do arquivo package.json.
-    ["JavaScript"]
+
+    :exclamation: O Registro abaixo :point_down: foi criado dentro do arquivo package.json.
 
     ~~~JavaScript
     "dependencies": {
@@ -58,7 +58,7 @@
         npm install
     ~~~
 
-5. Instalar o EXPRESS
+5. Criar/Editar SERVER.JS
 
     ~~~Javascript
     npm i -S express
