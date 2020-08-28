@@ -22,6 +22,24 @@
       "assignedTo": {
         "name": "Aquiles Rodrigues"
       },
+      "category": "CONFIGURAÇÃO",
+      "creation_time": "2020-08-22T03:56:38.911Z",
+      "description": {
+        "content": "node_modules/",
+        "mime": "text/markdown"
+      },
+      "details": {
+        "content": "Criar o arquivo .gitignore, na raiz do repositório para que não seja enviado ao github os módulos das dependências do node",
+        "mime": "text/markdown"
+      },
+      "id": "4",
+      "references": [],
+      "title": "3 - .GITIGNORE"
+    },
+    {
+      "assignedTo": {
+        "name": "Aquiles Rodrigues"
+      },
       "category": "CONFIGURAR",
       "creation_time": "2020-08-22T02:58:43.483Z",
       "description": {
@@ -37,18 +55,18 @@
         "name": "Aquiles Rodrigues"
       },
       "category": "CONFIGURAÇÃO",
-      "creation_time": "2020-08-22T03:56:38.911Z",
+      "creation_time": "2020-08-22T03:52:06.971Z",
       "description": {
-        "content": "node_modules/",
+        "content": "npm i -s express",
         "mime": "text/markdown"
       },
       "details": {
-        "content": "Criar o arquivo .gitignore, na raiz do repositório para que não seja enviado ao github os módulos das dependências do node",
+        "content": "desta forma o express vai ser instalado em sua última versão.",
         "mime": "text/markdown"
       },
-      "id": "4",
+      "id": "3",
       "references": [],
-      "title": "3 - .GITIGNORE"
+      "title": "4 - Instalar o EXPRESS"
     }
   ],
   "in-progress": [],
@@ -161,24 +179,6 @@
       "id": "10",
       "references": [],
       "title": "9 - Criar estrutura para o DB Usuário"
-    },
-    {
-      "assignedTo": {
-        "name": "Aquiles Rodrigues"
-      },
-      "category": "CONFIGURAÇÃO",
-      "creation_time": "2020-08-22T03:52:06.971Z",
-      "description": {
-        "content": "npm i -s express",
-        "mime": "text/markdown"
-      },
-      "details": {
-        "content": "desta forma o express vai ser instalado em sua última versão.",
-        "mime": "text/markdown"
-      },
-      "id": "3",
-      "references": [],
-      "title": "Instalar o EXPRESS"
     },
     {
       "assignedTo": {
