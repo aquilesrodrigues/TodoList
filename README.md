@@ -51,7 +51,7 @@
     },
     ~~~
 
-    > Caso você queira reinstalar os pacotes do node por algum motivo, ele informará quais módulos deverão ser instalados. Basta executar o comando abaixo :point_down:
+    > Caso você queira reinstalar os pacotes do node por algum motivo ou iniciar um projeto novo. Ele informará quais módulos deverão ser instalados. Basta executar o comando abaixo :point_down:  na sua linha de comandos.
 
     ~~~Shell
         npm install
