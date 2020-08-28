@@ -95,9 +95,9 @@
         }
     ~~~
 
-7. Inicializar o Nodemon junto com o Server
+7. Inicializando o Nodemon
 
-    :left_speech_bubble: _Assim que iniciamos o NPM será lido o arquivo **package.json** e que contém o bloco "script" que declaramos alguns scripts para serem utilizadas junto com o node._
+    :left_speech_bubble: _Assim que iniciamos o NPM será lido o arquivo **package.json** ele contém vários blocos para serem utilizadas junto com o node._
 
     ~~~Shell
 
@@ -107,11 +107,9 @@
     },
     ~~~
 
-    > :vertical_traffic_light: O que iremos fazer é inserir dentro do "scripts" um atalho chamado **start** que ao ser chamaod no shell junto com o comando node irá executar o script declarado acima :point_up: .
+    > :vertical_traffic_light: O que iremos fazer é inserir dentro do bloco "scripts" uma álias **start** que ao ser chamada no shell junto com o comando node irá executar o sua lista de  declarações, como declarado acima :point_up: .
 
     :exclamation: O script **"start": "nodemon server.js"** foi criado dentro do bloco script no arquivo **package.json**.
-
-
 
     Coluna 1 | Coluna 2
     :-------------- | :--------------
