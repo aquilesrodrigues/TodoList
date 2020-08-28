@@ -41,7 +41,7 @@
 
 4. Instalar o EXPRESS
 
-    :left_speech_bubble: _O Express é uma dependencia do Node.js responsável_
+    :left_speech_bubble: _o módulo Express – o mais usado e mais bem conhecido framework web node.js_
 
     ~~~Shell
 
@@ -63,6 +63,8 @@
     ~~~Shell
         npm install
     ~~~
+
+    :exclamation: Os módulos são bibliotecas JavaScript que você pode incluir no seu projeto.  Sempre que você instalar um módulo do npm, ele será instalado na pasta **node_modules/**
 
 5. Criar/Editar SERVER.JS
 
@@ -88,7 +90,7 @@
 
     > :vertical_traffic_light: a cada alteração que fazemos em um arquivo, precisamos reiniciar a aplicação com o comando node script ou script.js. O **-D** serve para informar que queremos sua execução apenas em modo desenvolvimento. Para rodar nossos scripts no shell basta digitar _nodemon script.js_.
 
-    :exclamation: O Registro de dependência abaixo :point_down: foi criado dentro do arquivo **package.json** no momento da instalação do nodemon.
+    :exclamation: O Registro de dependência abaixo :point_down: foi criado dentro do arquivo do seu projeto **package.json** no momento da instalação do nodemon.
 
     ~~~JavaScript
         "devDependencies": {
@@ -112,9 +114,9 @@
 
     :exclamation: O script **"start": "nodemon server.js"** foi criado dentro do bloco script no arquivo **package.json**.
 
-8. Inicializando o Nodemon
+8. Reinicializando através da nova álias criada
 
-    :left_speech_bubble: _Assim que iniciamos o NPM será lido o arquivo **package.json** ele contém vários blocos para serem carregados junto com o node._
+    :left_speech_bubble: _Como NPM támbem é responsável pela gerencia de dependências do projeto vamos chamá-lo para executar o script "start"._
 
     ~~~Shell
 
