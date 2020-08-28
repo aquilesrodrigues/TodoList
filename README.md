@@ -19,12 +19,13 @@
 2. Inciar projeto **NODE**
 
     ~~~cmder
-    npm init  -y
+    npm init -y
     ~~~
 
     :left_speech_bubble: _No shell, utilizar o **NPM** (O Gerenciador de pacotes do node) com o comando acima, ele se encarrega de inicializar um projeto novo em node. o **-y**  faz ele ignorar uma série de perguntas para começar o projeto. Será tudo automático!_
 
     > :vertical_traffic_light: Como saída teremos o arquvo package.json com as configurações básicas criadas.
+    >Todo pacote instalado no node será registrado no arquivo package.json.
 
 3. Criar arquivo .GITIGNORE
 
@@ -39,9 +40,22 @@
         npm i -S express
     ~~~
 
-    :left_speech_bubble: _O comando acima instala o nosso primeiro módulo Express._
+    :left_speech_bubble: _O comando acima instala o módulo Express do NODE._
 
-    > :vertical_traffic_light: Como saída teremos uma pasta /node_modules contendo o pacote instalado e todos as demais dependências e também o arquivo package-lock.json e o server.js.
+    > :vertical_traffic_light: Como saída teremos uma pasta /node_modules contendo o pacote instalado e todos as demais dependências, também o arquivo package-lock.json e o server.js.
+    > :exclamation: O Registro abaixo :point_down: foi criado dentro do arquivo package.json.
+
+    ~~~JavaScript
+    "dependencies": {
+    "express": "^4.17.1"
+    },
+    ~~~
+
+    > Caso você queira reinstalar os pacotes do node por algum motivo, ele informará quais módulos deverão ser instalados. Basta executar o comando abaixo :point_down:
+
+    ~~~Shell
+        npm install
+        ~~~
 
 5. Instalar o EXPRESS
 
@@ -53,7 +67,7 @@
 
     > :vertical_traffic_light: Como saída teremos uma pasta /node_modules contendo o pacote instalado e todos as demais dependências e também o arquivo package-lock.json e o server.js.
 
-    Actual: 6. Instalar o EXPRESS
+6. Instalar o EXPRESS
 
     ~~~Javascript
     npm i -S express
