@@ -119,22 +119,29 @@
     :left_speech_bubble: _Como NPM támbem é responsável pela gerencia de dependências do projeto vamos chamá-lo para executar o script "start"._
 
     ~~~Shell
-
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      **"start": "nodemon server.js"**
-    },
+        npm start
     ~~~
 
-    > :vertical_traffic_light: O que iremos fazer é inserir dentro do bloco "scripts" uma álias **start** que ao ser chamada no shell junto com o comando node irá executar o sua lista de  declarações, como declarado acima :point_up: .
+    > :vertical_traffic_light: No prompt de comandos vamos digitar **npm start** o nodemon irá executar o server.js e ficará monitorando qualquer alteração no projeto a fim de reiniciá-lo automaticamente.
 
-    :exclamation: O script **"start": "nodemon server.js"** foi criado dentro do bloco script no arquivo **package.json**.
+9. Melhorando o server.js
 
+    :left_speech_bubble: _Agora com o nodemon de olho em tudo, vamos melhorar nosso server.js alterando duas linhas._
+
+    ~~~Javascript
+        const port = process.env.port || 3001
+
+        app.listen(port)
+
+        console.log('servidor funcionando, na porta:', port)
+    ~~~
+
+    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo server.js e modificar a constante port e a linha console.log com o código acima :point_up:.
+
+##########################
     Coluna 1 | Coluna 2
     :-------------- | :--------------
     exemplo 1 | Exemplo 2
-
-    :left_speech_bubble: _Vai no repositório e pega a última versão do módulo EXPRESS_
 
 >No momento todo o trabalho está a cargo de @aquilesrodrigues
 >E-mail :e-mail: aquiles.silva@a.ficr.edu.br
