@@ -16,7 +16,7 @@
     1. Você deve instalar  o editor, o git, configurar uma conta no github para poder executar os demais passos do seu projeto.
     2. Após concluir todos os pre-requisitos acima continue
 
-2. Inciar projeto **NODE**
+2. Iniciar projeto **NODE**
 
     :left_speech_bubble: _No shell, utilizar o **NPM** (O Gerenciador de pacotes do node) com o comando acima, ele se encarrega de inicializar um projeto novo em node. o **-y**  faz ele ignorar uma série de perguntas para começar o projeto. Será tudo automático!_
 
@@ -49,12 +49,13 @@
     ~~~
 
     > :vertical_traffic_light: Como saída teremos uma pasta **/node_modules** contendo o pacote instalado e todos as demais dependências, também o arquivo _package-lock.json_ e o _server.js_.
+
     :exclamation: O Registro abaixo :point_down: foi criado dentro do arquivo **package.json**.
 
     ~~~JavaScript
-    "dependencies": {
-    "express": "^4.17.1"
-    },
+        "dependencies": {
+          "express": "^4.17.1"
+        },
     ~~~
 
     > :vertical_traffic_light: Caso você queira reinstalar os pacotes do node por algum motivo ou iniciar um projeto novo. Ele informará quais módulos deverão ser instalados. Basta executar o comando abaixo :point_down:  na sua linha de comandos.
@@ -74,7 +75,7 @@
         console.log("servidor funcionando")
     ~~~
 
-    > :vertical_traffic_light: em seu editor de texto, criar ou editar o arquivo server.js e inserir o código acima. Vamos declarar duas constantes. A primeira importa o express e a segunda recebe o objeto express(). na constante criada app, vamos passar a porta 3001, através do método listen()  e para facilictar a visualização do que está acontecendo vamos gerar uma mensagem de que está tudo bem através do console.log.
+    > :vertical_traffic_light: em seu editor de texto, criar ou editar o arquivo server.js e inserir o código acima. Vamos declarar duas constantes. A primeira importa o express e a segunda recebe o objeto **express()**. na constante criada app, vamos passar a porta **3001**, através do método **listen()** e para facilictar a visualização do que está acontecendo vamos gerar uma mensagem de que está tudo bem através do console.log.
 
 6. Instalar o Nodemon
 
@@ -97,7 +98,23 @@
 
 7. Inicializando o Nodemon
 
-    :left_speech_bubble: _Assim que iniciamos o NPM será lido o arquivo **package.json** ele contém vários blocos para serem utilizadas junto com o node._
+    :left_speech_bubble: _Assim que iniciamos o NPM será lido o arquivo **package.json** ele contém vários blocos para serem carregados junto com o node._
+
+    ~~~Shell
+
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      **"start": "nodemon server.js"**
+    },
+    ~~~
+
+    > :vertical_traffic_light: O que iremos fazer é inserir dentro do bloco "scripts" uma álias **start** que ao ser chamada no shell junto com o comando node irá executar o sua lista de  declarações, como declarado acima :point_up: .
+
+    :exclamation: O script **"start": "nodemon server.js"** foi criado dentro do bloco script no arquivo **package.json**.
+
+8. Inicializando o Nodemon
+
+    :left_speech_bubble: _Assim que iniciamos o NPM será lido o arquivo **package.json** ele contém vários blocos para serem carregados junto com o node._
 
     ~~~Shell
 
