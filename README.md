@@ -42,8 +42,9 @@
 
     :left_speech_bubble: _O comando acima instala o módulo Express do NODE._
 
-    > :vertical_traffic_light: Como saída teremos uma pasta /node_modules contendo o pacote instalado e todos as demais dependências, também o arquivo package-lock.json e o server.js.
+    > :vertical_traffic_light: Como saída teremos uma pasta **/node_modules** contendo o pacote instalado e todos as demais dependências, também o arquivo package-lock.json e o server.js.
     > :exclamation: O Registro abaixo :point_down: foi criado dentro do arquivo package.json.
+    ["JavaScript"]
 
     ~~~JavaScript
     "dependencies": {
@@ -55,7 +56,7 @@
 
     ~~~Shell
         npm install
-        ~~~
+    ~~~
 
 5. Instalar o EXPRESS
 
