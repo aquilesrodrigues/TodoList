@@ -154,21 +154,19 @@
 
 11. Rotas com Express
 
-    :left_speech_bubble: _Aproveitando os recursos disponibilizados pelo Framework Express vamos novamente modificar o server.js_
+    :left_speech_bubble: _Inserir a primeira rota básica apenas para informar que a rota está funcionando_
 
     ~~~Javascript
 
     app.route("/")
     .get((req, res)=>{res.send("API todoList - Certo no método GET")})
-    .post((req, res) =>{res.send('API todoList - Certo no método POST')})
-
     ~~~
 
     > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir o app.route().
 
 12. Informando o caminho da aplicação
 
-    :left_speech_bubble: _Criar pastas, arquivo e informar no server.js_
+    :left_speech_bubble: _Criar pastas principal da aplicação (src), as subpastas (controllers models routes) e os dois arquivos_
 
     ~~~shell
 
@@ -177,9 +175,24 @@
         mkdir controllers models routes
         cd routes
         vim usuarioRoutes.js
+        cd ../controllers
+        vim usuariosController.js
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** e através do módulo exports passar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **gest** e **post** para disponibilizar à outros arquivos.
+
+    ~~~Javascript
+
+    const routes = require("./src/routes/usuarioRoutes.js")
+    ~~~
+
+    > :vertical_traffic_light: Em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir a rota para o arquivo usuarioRoutes.js.
+
+---
+
+13. Informando o caminho da aplicação
+
+    :left_speech_bubble: _Criar pastas, arquivo e informar no server.js_
+
 
     ~~~Javascript
 
@@ -191,16 +204,16 @@
     }
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir a rota para o arquivo usuarioRoutes.js.
+    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** e através do módulo exports passar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post** para disponibilizar à outros arquivos.
 
     ~~~Javascript
 
     const routes = require("./src/routes/usuarioRoutes.js")
     ~~~
 
+    > :vertical_traffic_light: Em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir a rota para o arquivo usuarioRoutes.js.
 
 ---
-
 ===
     Coluna 1 | Coluna 2
     :-------------- | :--------------
