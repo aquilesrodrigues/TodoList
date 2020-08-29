@@ -1,9 +1,17 @@
-const express = require('express')
+const port = process.env.PORT || 3000;
+const bodyParser = require("body-parser");
 
-const app = express()
+const express = require('express');
+const app = express();
 
-const port = process.env.port || 3001
+app.listen(port);
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-app.listen(port)
+/*Determinação da rota raiz.*/
+app.route("/")
+.get((req, res)=>{res.send("API todoList - Certo no método GET")})
+.post((req, res) =>{res.send('API todoList - Certo no método POST')})
 
-console.log('servidor funcionando, na porta:', port)
+
+console.log('servidor funcionando, na porta:', port);

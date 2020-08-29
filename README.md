@@ -106,13 +106,13 @@
 
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      **"start": "nodemon server.js"**
+      "start": "nodemon server.js"
     },
     ~~~
 
-    > :vertical_traffic_light: O que iremos fazer é inserir dentro do bloco "scripts" uma álias **start** que ao ser chamada no shell junto com o comando node irá executar o sua lista de  declarações, como declarado acima :point_up: .
+    > :vertical_traffic_light: O que iremos fazer é inserir dentro do bloco "scripts" uma álias **start** que ao ser chamada no shell junto com o comando node irá executar o sua declaração: "start": **"nodemon server.js"**.
 
-    :exclamation: O script **"start": "nodemon server.js"** foi criado dentro do bloco script no arquivo **package.json**.
+    :exclamation: O script **"start": "nodemon server.js"** foi criado dentro do bloco **"script"** no arquivo **package.json**.
 
 8. Reinicializando através da nova álias criada
 
@@ -129,16 +129,79 @@
     :left_speech_bubble: _Agora com o nodemon de olho em tudo, vamos melhorar nosso server.js alterando duas linhas._
 
     ~~~Javascript
-        const port = process.env.port || 3001
 
-        app.listen(port)
+        const port = process.env.PORT || 3000;
 
-        console.log('servidor funcionando, na porta:', port)
+        app.listen(port);
+
+        console.log('servidor funcionando, na porta:', port);
     ~~~
 
-    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo server.js e modificar a constante port e a linha console.log com o código acima :point_up:.
+    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** e modificar as constantes e a linha console.log com o código acima :point_up:.
 
-##########################
+10. Usar o bodyParser.js
+
+    :left_speech_bubble: _Aproveitando os recursos disponibilizados pelo Framework Express vamos novamente incrementar o server.js_
+
+    ~~~Javascript
+
+        const bodyParser = require("body-parser");
+        app.use(bodyParser.urlencoded({extended: true}));
+        app.use(bodyParser.json());
+    ~~~
+
+    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos usar o BodyParser para melhorar os processos das requisições, através do express com o seu módulo app.use() que irá receber os recursos do bodyParser.
+
+11. Rotas com Express
+
+    :left_speech_bubble: _Aproveitando os recursos disponibilizados pelo Framework Express vamos novamente modificar o server.js_
+
+    ~~~Javascript
+
+    app.route("/")
+    .get((req, res)=>{res.send("API todoList - Certo no método GET")})
+    .post((req, res) =>{res.send('API todoList - Certo no método POST')})
+
+    ~~~
+
+    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir o app.route().
+
+12. Informando o caminho da aplicação
+
+    :left_speech_bubble: _Criar pastas, arquivo e informar no server.js_
+
+    ~~~shell
+
+        mkdir src
+        cd src
+        mkdir controllers models routes
+        cd routes
+        vim usuarioRoutes.js
+    ~~~
+
+    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** e através do módulo exports passar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **gest** e **post** para disponibilizar à outros arquivos.
+
+    ~~~Javascript
+
+    module.exports = function(app){
+        const usuarios = require("../controllers/usuariosController.js")
+        app.route("/usuarios")
+        .get(usuarios.listAll)
+        .post(usuarios.createone)
+    }
+    ~~~
+
+    > :vertical_traffic_light: Em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir a rota para o arquivo usuarioRoutes.js.
+
+    ~~~Javascript
+
+    const routes = require("./src/routes/usuarioRoutes.js")
+    ~~~
+
+
+---
+
+===
     Coluna 1 | Coluna 2
     :-------------- | :--------------
     exemplo 1 | Exemplo 2
