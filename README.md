@@ -10,11 +10,15 @@
 - [x] 4. Instalar o EXPRESS
 - [x] Iniciar um projeto Node
 - [x] Iniciar um projeto Node
-- [ ] item incompleto
+- [0] item incompleto.
+
+    ---
 
 1. Preparar o ambiente do projeto **NODE**
     1. Você deve instalar  o editor, o git, configurar uma conta no github para poder executar os demais passos do seu projeto.
     2. Após concluir todos os pre-requisitos acima continue
+
+    ---
 
 2. Iniciar projeto **NODE**
 
@@ -27,6 +31,8 @@
     > :vertical_traffic_light: Como saída teremos o arquvo package.json com as configurações básicas criadas.
     >Todo pacote instalado no node será registrado no arquivo package.json.
 
+    ---
+
 3. Criar arquivo .GITIGNORE
 
     :left_speech_bubble: _.gitignore - informa ao git para não commitar os caminhos, arquivos e outras informações que forem representados dentro do arquivo.
@@ -38,6 +44,8 @@
 
     > :vertical_traffic_light: Em seu editor de texto criar o arquivo .gitignore e dentro dele inserir a linha node_modules/
     >Como saída teremos o arquvo .gitignore com suas configurações básicas.
+
+    ---
 
 4. Instalar o EXPRESS
 
@@ -66,6 +74,8 @@
 
     :exclamation: Os módulos são bibliotecas JavaScript que você pode incluir no seu projeto.  Sempre que você instalar um módulo do npm, ele será instalado na pasta **node_modules/**
 
+    ---
+
 5. Criar/Editar SERVER.JS
 
     :left_speech_bubble: _O arquivo **server.js** contém os scripts para execução do servidor de aplicação no node.
@@ -78,6 +88,8 @@
     ~~~
 
     > :vertical_traffic_light: em seu editor de texto, criar ou editar o arquivo server.js e inserir o código acima. Vamos declarar duas constantes. A primeira importa o express e a segunda recebe o objeto **express()**. na constante criada app, vamos passar a porta **3001**, através do método **listen()** e para facilictar a visualização do que está acontecendo vamos gerar uma mensagem de que está tudo bem através do console.log.
+
+    ---
 
 6. Instalar o Nodemon
 
@@ -98,6 +110,8 @@
         }
     ~~~
 
+    ---
+
 7. Inicializando o Nodemon
 
     :left_speech_bubble: _Assim que iniciamos o NPM será lido o arquivo **package.json** ele contém vários blocos para serem carregados junto com o node._
@@ -114,6 +128,8 @@
 
     :exclamation: O script **"start": "nodemon server.js"** foi criado dentro do bloco **"script"** no arquivo **package.json**.
 
+    ---
+
 8. Reinicializando através da nova álias criada
 
     :left_speech_bubble: _Como NPM támbem é responsável pela gerencia de dependências do projeto vamos chamá-lo para executar o script "start"._
@@ -123,6 +139,8 @@
     ~~~
 
     > :vertical_traffic_light: No prompt de comandos vamos digitar **npm start** o nodemon irá executar o server.js e ficará monitorando qualquer alteração no projeto a fim de reiniciá-lo automaticamente.
+
+    ---
 
 9. Melhorando o server.js
 
@@ -139,6 +157,8 @@
 
     > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** e modificar as constantes e a linha console.log com o código acima :point_up:.
 
+    ---
+
 10. Usar o bodyParser.js
 
     :left_speech_bubble: _Aproveitando os recursos disponibilizados pelo Framework Express vamos novamente incrementar o server.js_
@@ -152,6 +172,8 @@
 
     > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos usar o BodyParser para melhorar os processos das requisições, através do express com o seu módulo app.use() que irá receber os recursos do bodyParser.
 
+    ---
+
 11. Rotas com Express
 
     :left_speech_bubble: _Inserir a primeira rota básica apenas para informar que a rota está funcionando_
@@ -163,6 +185,8 @@
     ~~~
 
     > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir o app.route().
+
+    ---
 
 12. Informando o caminho da aplicação
 
@@ -179,7 +203,6 @@
         vim usuariosController.js
     ~~~
 
-
     ~~~Javascript
 
     const routes = require("./src/routes/usuarioRoutes.js")
@@ -187,12 +210,11 @@
 
     > :vertical_traffic_light: Em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir a rota para o arquivo usuarioRoutes.js.
 
----
+    ---
 
 13. Informando o caminho da aplicação
 
     :left_speech_bubble: _Criar pastas, arquivo e informar no server.js_
-
 
     ~~~Javascript
 
@@ -213,8 +235,9 @@
 
     > :vertical_traffic_light: Em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir a rota para o arquivo usuarioRoutes.js.
 
----
-===
+    ---
+
+fim de bloco
     Coluna 1 | Coluna 2
     :-------------- | :--------------
     exemplo 1 | Exemplo 2

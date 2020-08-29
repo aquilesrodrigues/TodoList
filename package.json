@@ -2,7 +2,7 @@
   "name": "todolist",
   "version": "1.0.0",
   "description": "Projeto de NODEjs com SQL",
-  "main": "server.js",
+  "main": " index.js",
   "bugs": {
     "url": "https://github.com/aquilesrodrigues/TodoList/issues"
   },
