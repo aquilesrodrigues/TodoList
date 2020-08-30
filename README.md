@@ -474,4 +474,4 @@ fim de bloco
 > :triangular_flag_on_post: conteúdo a ser inserido
 [TodoList-PROJ](https://github.com/aquilesrodrigues/TodoList).
 
-![tabela-usuário](https://drive.google.com/drive/folders/17q0dhJyTApYO4VlZuYf4RXs_vouyJWkj?usp=sharing/usuario-database_sqlite3.jpg)
+![tabela-usuário](https://drive.google.com/file/d/15siQIgtxevJfMfEgKzCnAVAfiwNvg2VD/view?usp=sharing)
