@@ -220,7 +220,8 @@
     const routes = require("./app/routes/usuarioRoutes.js")
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir a rota para o arquivo usuarioRoutes.js.
+    > :vertical_traffic_light: **app**: Esta pasta contém toda a parte lógica e estrutural de nossa aplicação, é nela que definimos nossos _controllers, models, routes, enums, util, helpers_.
+    > **app/controllers**: Responsável por armazenar todos os controllers de nossa aplicação, centralizados em um único lugar. Geralmente é onde encontramos algumas das regras de negócio. **app/models**: Responsável por armazenar todos as models da nossa aplicação, que neste projeto serão as classes de instâncias do ORM SEQUELIZE\.
 
     ---
 
