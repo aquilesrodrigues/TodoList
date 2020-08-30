@@ -375,6 +375,93 @@
 
     ---
 
+20. Conexão com Banco SQLite
+
+    :left_speech_bubble: _Configurando a conexão com o banco no ./src/database/config/**config.json**. As configurações abaixo são criadas por padrão_
+
+    ~~~json
+
+       {
+        "development": {
+            "username": "root",
+            "password": null,
+            "database": "database_development",
+            "host": "127.0.0.1",
+            "dialect": "mysql"
+        },
+        "test": {
+            "username": "root",
+            "password": null,
+            "database": "database_test",
+            "host": "127.0.0.1",
+            "dialect": "mysql"
+        },
+        "production": {
+            "username": "root",
+            "password": null,
+            "database": "database_production",
+            "host": "127.0.0.1",
+            "dialect": "mysql"
+        }
+       }
+    ~~~
+
+    > :vertical_traffic_light:  Iremos trabalhar com SQLlite e por iremos modificar o arquivo acima :point_up:
+
+    :exclamation: O arquivo config está em formato **"json"**. 
+
+    ~~~json
+    {
+        "development": {
+            "storage": "./src/database/database.sqlite3",
+            "dialect": "sqlite"
+        },
+        "test": {
+            "storage": "./src/database/database.sqlite3",
+            "dialect": "sqlite"
+        },
+        "production": {
+            "storage": "./src/database/database.sqlite3",
+            "dialect": "sqlite"
+        }
+      }
+    ~~~
+
+    ---
+
+21. Modelo associativo da TABELA no Sequelize
+
+    :left_speech_bubble: _Criando um modelo associativo de uma tabela **Usuario** no no Sequelize. para ser posteriormente migrado para o banco de dados_
+
+    ~~~Shell
+
+       npx sequelize model:generate --name Usuario --attributes nome:string,email:string
+    ~~~
+
+    > :vertical_traffic_light:  O comando acima :point_up: vai gerar 2 arquivos: o model ==> **./src/api/models/usuario.js** e o migration ==> **.//src/database/migrations/"timestamp"-create-usuario.js"**.
+    ...
+    > o Arquivo usuario.js - o modelo associativo do sequelize para com o banco. </br>
+    > O Arquivo "timestamp"-create-usuario.js internamente possui dois atributos a mais inseridos pelo próprio sequelize que é **(createdAt / updatedAt)** garantindo informaçoes sobre creação e atualizações de cada registro na tabela.
+
+    :exclamation: **.//src/database/migrations/"timestamp"-create-usuario.js"** não deve ser alterado. Nele consta detalhes da operação realizada, se foi operação de criação e seu timestamp.
+    **timestamp**: representa um ponto específico na linha do tempo e leva em consideração o fuso horário em questão (UTC). Com isto, teremos sempre o detalhamento perante a linha do tempo real.
+
+    ---
+22. Migrando Tabela modelo para o banco
+
+    :left_speech_bubble: _Criando uma tabela **Usuario** no banco **database.sqlite3** pelo shel utilizando o Sequelize-cli._
+
+    ~~~Shell
+
+       npx sequelize db:migrate
+    ~~~
+
+    > :v.
+
+    :exclamation: O arquivo  file "src\database\config\config.json". foi acionado e estabelecida a conexão e na sequência o arquivo de banco de dados **./src/database/database.sqlite3"**  foi alterado com a inclusão da tabela usuario.
+
+    ---
+
 
 fim de bloco
     Coluna 1 | Coluna 2
