@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
-const routes = require("./app/routes/usuarioRoutes.js")
+const routes = require("./api/routes/usuarioRoutes.js")
 
 routes(app);
 

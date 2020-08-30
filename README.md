@@ -100,7 +100,7 @@
         console.log("servidor funcionando")
     ~~~
 
-    > :vertical_traffic_light: em seu editor de texto, criar ou editar o arquivo server.js e inserir o código acima. Vamos declarar duas constantes. A primeira importa o express e a segunda recebe o objeto **express()**. na constante criada app, vamos passar a porta **3001**, através do método **listen()** e para facilictar a visualização do que está acontecendo vamos gerar uma mensagem de que está tudo bem através do console.log.
+    > :vertical_traffic_light: em seu editor de texto, criar ou editar o arquivo server.js e inserir o código acima. Vamos declarar duas constantes. A primeira importa o express e a segunda recebe o objeto **express()**. na constante criada **app**, vamos passar a porta **3001**, através do método **listen()** e para facilictar a visualização do que está acontecendo vamos gerar uma mensagem de que está tudo bem através do console.log.
 
     ---
 
@@ -183,7 +183,7 @@
         app.use(bodyParser.json());
     ~~~
 
-    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos usar o BodyParser para melhorar os processos das requisições, através do express com o seu módulo app.use() que irá receber os recursos do bodyParser.
+    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos usar o BodyParser para melhorar os processos das requisições, através do express com o seu módulo **app.use()** que irá receber os recursos do bodyParser.
 
     ---
 
@@ -197,19 +197,19 @@
     .get((req, res)=>{res.send("API todoList - Certo no método GET")})
     ~~~
 
-    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir o app.route().
+    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir o **app.route()**. Teremos nossa primeira rota que é do tipo **“get”**. Ela é composta de dois parâmetros, o primeiro é o endereço da nossa rota, no caso a raiz da aplicação **.route("/)**, já o segundo é uma função de retorno, que recebe também dois parâmetros o **“req”** (requisição) e o **“res”** (resposta), nessa função retornamos uma simples mensagem com o método **“send”** do Express.
 
     ---
 
 12. Informando o caminho da aplicação
 
-    :left_speech_bubble: _Criar pastas principal da aplicação (app), as subpastas (controllers models routes) e os dois arquivos_
+    :left_speech_bubble: _Criar pastas principal da aplicação (api), as subpastas (controllers models routes) e os dois arquivos_
 
     ~~~shell
 
-        mkdir app
+        mkdir api
 
-        cd app
+        cd api
 
         mkdir controllers models routes
 
@@ -217,11 +217,11 @@
 
     ~~~Javascript
 
-    const routes = require("./app/routes/usuarioRoutes.js")
+    const routes = require("./api/routes/usuarioRoutes.js")
     ~~~
 
-    > :vertical_traffic_light: **app**: Esta pasta contém toda a parte lógica e estrutural de nossa aplicação, é nela que definimos nossos _controllers, models, routes, enums, util, helpers_.
-    > **app/controllers**: Responsável por armazenar todos os controllers de nossa aplicação, centralizados em um único lugar. Geralmente é onde encontramos algumas das regras de negócio. **app/models**: Responsável por armazenar todos as models da nossa aplicação, que neste projeto serão as classes de instâncias do ORM SEQUELIZE\.
+    > :vertical_traffic_light: **api**: Esta pasta contém toda a parte lógica e estrutural de nossa aplicação, é nela que definimos nossos _controllers, models, routes, enums, util, helpers_.
+    > **api/controllers**: Responsável por armazenar todos os controllers de nossa aplicação, centralizados em um único lugar. Geralmente é onde encontramos algumas das regras de negócio. **api/models**: Responsável por armazenar todos as models da nossa aplicação, que neste projeto serão as classes de instâncias do ORM SEQUELIZE.
 
     ---
 
@@ -239,7 +239,7 @@
     }
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** em **./app/routes** internamente usar o módulo exports para declarar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post**.
+    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** em **./api/routes** internamente usar o módulo exports para declarar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post**.
 
     ---
 14. Editando Controller
