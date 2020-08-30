@@ -203,13 +203,13 @@
 
 12. Informando o caminho da aplicação
 
-    :left_speech_bubble: _Criar pastas principal da aplicação (src), as subpastas (controllers models routes) e os dois arquivos_
+    :left_speech_bubble: _Criar pastas principal da aplicação (app), as subpastas (controllers models routes) e os dois arquivos_
 
     ~~~shell
 
-        mkdir src
+        mkdir app
 
-        cd src
+        cd app
 
         mkdir controllers models routes
 
@@ -217,7 +217,7 @@
 
     ~~~Javascript
 
-    const routes = require("./src/routes/usuarioRoutes.js")
+    const routes = require("./app/routes/usuarioRoutes.js")
     ~~~
 
     > :vertical_traffic_light: Em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir a rota para o arquivo usuarioRoutes.js.
@@ -238,7 +238,7 @@
     }
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** em **./src/routes** internamente usar o módulo exports para declarar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post**.
+    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** em **./app/routes** internamente usar o módulo exports para declarar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post**.
 
     ---
 14. Editando Controller
