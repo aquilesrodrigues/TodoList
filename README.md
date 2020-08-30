@@ -217,7 +217,7 @@
 
     ~~~Javascript
 
-    const routes = require("./api/routes/usuarioRoutes.js")
+    const routes = require("./src/api/routes/usuarioRoutes.js")
     ~~~
 
     > :vertical_traffic_light: **api**: Esta pasta contém toda a parte lógica e estrutural de nossa aplicação, é nela que definimos nossos _controllers, models, routes, enums, util, helpers_.
@@ -239,14 +239,14 @@
     }
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** em **./api/routes** internamente usar o módulo exports para declarar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post**.
+    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** em **./src/api/routes** internamente usar o módulo exports para declarar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post**.
 
     ---
 14. Editando Controller
 
     :left_speech_bubble: _No arquivo usuariosController.js vamos criar os primeiros registros a serem exibidos_
 
-    ~~~Javascript
+    ~~~javascript
 
         exports.listAll = (req, res) => {
         let usuarios =
@@ -274,41 +274,107 @@
         }
     ~~~
 
-15. Sequelize
+15. SqlLITE BANCO DE DADOS
 
-    :left_speech_bubble: _esse tipo de esquema sempre teremos um arquivo de configuração, responsável por fornecer os dados para que o componente de ORM possa se comunicar com o banco e aplicação._
+    :left_speech_bubble: _Como estamos em fase de modelagem vamos trabalhar inicialmentoecom SQLite._
 
-    ~~~Javascript
+    SQLite
 
-        exports.listAll = (req, res) => {
-        let usuarios =
-        [
-            {
-                nome: 'teste 01',
-                email: 'teste@email.com'
-            },
-            {
-                nome: 'teste 02',
-                email: 'teste2@email.com'
-            }
-        ]
-        res.send(usuarios)
-        }
+    ~~~Shell
 
-        exports.createOne = (req, res) => {
-        let response = {
-            message: 'Usuário criado com sucesso',
-            data: req.body
-        }
-        res.send(response)
-
-
-        }
+       npm i -S sqlite3
     ~~~
 
-    > :vertical_traffic_light:  um ORM é um Mapeamento Objeto Relacional, sua base consiste em manter o uso de orientação a objetos  e um pouco do conceito de  non-query. Pois serão raros os momentos onde teremos que escrever uma linha de código SQL para esse tipo de ferramenta. Eles operam como um agente de banco de dados, sendo possível através de pouquíssimas mudanças, utilizar o mesmo código para mais de um banco de dados. Não importa se ele está em Mysql, SqlServer ou até mesmo Oracle! Ele consegue agir da mesma forma em alguns bancos de dados, você só precisa mudar o driver de conexão e está pronto para uso.
+     ou Postgres
+
+    ~~~Shell
+
+    npm i -S pg pg-hstore
+    ~~~
+
+     ou SQL Server
+
+    ~~~Shell
+
+    npm i -S tedious
+    ~~~
+
+    > :vertical_traffic_light:  um .
+
+    :exclamation: Referências: dfdf
 
     ---
+
+16. Sequelize
+
+    :left_speech_bubble: _é um ORM (Object-Relational Mapper) para Node.js. Eles faz o mapeamento de dados relacionais (armazenados tabelas, linhas e colunas) para objetos em JS. Ele permite criar, buscar, alterar e remover dados do banco usando objetos e métodos em JS, além de fazer alterações na estrutura das tabelas. Ele suporta os bancos PostgreSQL, MySQL, MSSQL e SQLite. Esse tipo de esquema sempre teremos um arquivo de configuração, responsável por fornecer os dados para que o componente de ORM possa se comunicar com o banco e aplicação._
+
+    ~~~Shell
+
+       npm i -S sequelize
+    ~~~
+
+    > :vertical_traffic_light:  SEQUELIZE é um **ORM**_(Mapeamento Objeto Relacional)_, sua base consiste em manter o uso de orientação a objetos  e um pouco do conceito de  non-query. Pois serão raros os momentos onde teremos que escrever uma linha de código SQL. Operam como um agente de banco de dados, sendo possível através de pouquíssimas mudanças, utilizar o mesmo código para mais de um banco de dados. Não importa se ele está em PostgreSQL, SqlServer ou até mesmo SQlite! você só precisa mudar o driver de conexão e está pronto para uso.
+
+    :exclamation: Referências: [Introdução ao Sequelize](https://ezdevs.com.br/introducao-a-orm-no-node-js-com-sequelize/),
+    [node, express, postres usando Sequelize](https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize).
+
+    ---
+
+17. Sequelize CLI
+
+    :left_speech_bubble: _o Sequelize-CLI será utilizado apenas no ambiente de desenvolvimento._
+
+    ~~~Shell
+
+       npm i -D sequelize-cli
+    ~~~
+
+    > :vertical_traffic_light:  No shel utilizando o gerenciador de pacotes NPM, vamos instalar o SEQUELIZE-CLI com a flag -D para ser utilizado apenas no ambiente de desenvolvimento.
+
+    :exclamation: Lembramos que tanto o sequelize como sequelize-cli foram inseridos dentro do arquivo package.json em duas áreas diferentes **"sequelize" ==> "dependencies"** e o **"sequelize-cli" ==> "devDependencies"**.
+
+    ---
+
+18. .sequelizerc
+
+    :left_speech_bubble: _personalizar o Sequelize em nosso projeto._
+
+    ~~~Javascript
+
+        const path = require('path');
+
+        module.exports = {
+            "config": path.resolve('./src/database/config', 'config.json'),
+            "models-path": path.resolve('./src/api/models'), // respeitar MVC
+            "seeders-path": path.resolve('./src/database/seeders'),
+            "migrations-path": path.resolve('./src/database/migrations')
+        };
+    ~~~
+
+    > :vertical_traffic_light:  Para configurar o sequelize, crie um arquivo na raiz do seu projeto, com o nome **.sequelizerc**. Em seu editor de texto, inserir algumas configurações de caminho das pastas do nosso projeto. Seu arquivo .sequelizerc deverá conter o seguinte conteúdo acima :point_up:.
+    ---
+    > O **config.json** ==> contém configuração de autenticação do banco de dados. **migrations** ==> A pasta conterá as migrações de nosso aplicativo. **models** ==> os modelos de aplicativos _(Na arquitetura MVC, o model é a representação da tabela do banco de dados)_. **seeders* ==> Os dados de semente _(são dados iniciais fornecidos com um sistema para fins de teste, treinamento ou modelagem)_.
+
+    :exclamation: Referências: Respeitando o padrão MVC o "models" ficará na pasta **/api**. E para fins mais didáticos de entendemento do que "pertence a que?", irei colocar o _config, seeders e migrations_ em outra pasta **/database**
+
+    ---
+
+19. Iniciar o sequelize
+
+    :left_speech_bubble: _Iniciar o Sequelize com o npx._
+
+    ~~~Shell
+
+       npx sequelize init
+    ~~~
+
+    > :vertical_traffic_light:  No shel utilizando o inicializador de pacotes NPX iremos iniciarlizar o sequelize
+
+    :exclamation: O **"npx"** é o comando que inicializa sem obrigação de instalar pacotes.
+
+    ---
+
 
 fim de bloco
     Coluna 1 | Coluna 2
