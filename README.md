@@ -8,8 +8,21 @@
 - [x] 2. Iniciar um projeto Node
 - [x] 3. Criar arquivo .GITIGNORE
 - [x] 4. Instalar o EXPRESS
-- [x] Iniciar um projeto Node
-- [x] Iniciar um projeto Node
+- [x] 5. Criar/Editar SERVER.JS
+- [x] 6. Instalar o Nodemon
+- [x] 7. Inicializando o Nodemon
+- [x] 8. Reinicializando através da nova álias criada
+- [x] 9. Melhorando o server.js
+- [x] 10. Usar o bodyParser.js
+- [x] 11. Rotas com Express
+- [x] 12. Informando o caminho da aplicação
+- [x] 13. Editando Rota e chamando o controller
+- [x] 14. Editando Controller
+- [x] 15.
+- [x] 16.
+- [x] 17.
+- [x] 18.
+- [x] 19.
 - [0] item incompleto.
 
     ---
@@ -195,12 +208,11 @@
     ~~~shell
 
         mkdir src
+
         cd src
+
         mkdir controllers models routes
-        cd routes
-        vim usuarioRoutes.js
-        cd ../controllers
-        vim usuariosController.js
+
     ~~~
 
     ~~~Javascript
@@ -212,28 +224,56 @@
 
     ---
 
-13. Informando o caminho da aplicação
+13. Editando Rota e chamando o controller
 
-    :left_speech_bubble: _Criar pastas, arquivo e informar no server.js_
+    :left_speech_bubble: _No arquivo usuarioRoutes.js vamos apontar para o controller Usuário_
 
     ~~~Javascript
 
     module.exports = function(app){
-        const usuarios = require("../controllers/usuariosController.js")
-        app.route("/usuarios")
+        const usuarios = require('../controllers/usuariosController.js')
+        app.route('/usuarios')
         .get(usuarios.listAll)
-        .post(usuarios.createone)
+        .post(usuarios.createOne)
     }
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** e através do módulo exports passar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post** para disponibilizar à outros arquivos.
+    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** em **./src/routes** internamente usar o módulo exports para declarar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post**.
+
+    ---
+14. Editando Controller
+
+    :left_speech_bubble: _No arquivo usuariosController.js vamos criar os primeiros registros a serem exibidos_
 
     ~~~Javascript
 
-    const routes = require("./src/routes/usuarioRoutes.js")
+        exports.listAll = (req, res) => {
+        let usuarios =
+        [
+            {
+                nome: 'teste 01',
+                email: 'teste@email.com'
+            },
+            {
+                nome: 'teste 02',
+                email: 'teste2@email.com'
+            }
+        ]
+        res.send(usuarios)
+        }
+
+        exports.createOne = (req, res) => {
+        let response = {
+            message: 'Usuário criado com sucesso',
+            data: req.body
+        }
+        res.send(response)
+
+
+        }
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir a rota para o arquivo usuarioRoutes.js.
+    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioController.js** em **./src/Controllers**
 
     ---
 
