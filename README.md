@@ -273,7 +273,39 @@
         }
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioController.js** em **./src/Controllers**
+15. Sequelize
+
+    :left_speech_bubble: _esse tipo de esquema sempre teremos um arquivo de configuração, responsável por fornecer os dados para que o componente de ORM possa se comunicar com o banco e aplicação._
+
+    ~~~Javascript
+
+        exports.listAll = (req, res) => {
+        let usuarios =
+        [
+            {
+                nome: 'teste 01',
+                email: 'teste@email.com'
+            },
+            {
+                nome: 'teste 02',
+                email: 'teste2@email.com'
+            }
+        ]
+        res.send(usuarios)
+        }
+
+        exports.createOne = (req, res) => {
+        let response = {
+            message: 'Usuário criado com sucesso',
+            data: req.body
+        }
+        res.send(response)
+
+
+        }
+    ~~~
+
+    > :vertical_traffic_light:  um ORM é um Mapeamento Objeto Relacional, sua base consiste em manter o uso de orientação a objetos  e um pouco do conceito de  non-query. Pois serão raros os momentos onde teremos que escrever uma linha de código SQL para esse tipo de ferramenta. Eles operam como um agente de banco de dados, sendo possível através de pouquíssimas mudanças, utilizar o mesmo código para mais de um banco de dados. Não importa se ele está em Mysql, SqlServer ou até mesmo Oracle! Ele consegue agir da mesma forma em alguns bancos de dados, você só precisa mudar o driver de conexão e está pronto para uso.
 
     ---
 
