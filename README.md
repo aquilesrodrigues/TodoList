@@ -356,7 +356,7 @@
     ---
     > O **config.json** ==> contém configuração de autenticação do banco de dados. **migrations** ==> A pasta conterá as migrações de nosso aplicativo. **models** ==> os modelos de aplicativos _(Na arquitetura MVC, o model é a representação da tabela do banco de dados)_. **seeders* ==> Os dados de semente _(são dados iniciais fornecidos com um sistema para fins de teste, treinamento ou modelagem)_.
 
-    :exclamation: Referências: Respeitando o padrão MVC o "models" ficará na pasta **/api**. E para fins mais didáticos de entendemento do que "pertence a que?", irei colocar o _config, seeders e migrations_ em outra pasta **/database**
+    :exclamation: Referências: Respeitando o padrão MVC o "models" ficará na pasta **/api**. Nesta pasta será criado automaticamente um arquivo chamado **index.js**, nele consta script que verifica todos arquivos inseridos na pasta **models** e gera exportação para ser utilizado por outros arquivos. Para as demais pastas, irei colocar o _config, seeders e migrations_ na pasta **/database**.
 
     ---
 
