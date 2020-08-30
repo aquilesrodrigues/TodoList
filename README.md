@@ -406,7 +406,7 @@
        }
     ~~~
 
-    > :vertical_traffic_light:  Iremos trabalhar com SQLlite e por iremos modificar o arquivo acima :point_up:
+    > :vertical_traffic_light:  Iremos trabalhar com SQLlite e por iremos modificar o arquivo acima :point_up: pelo modelo
 
     :exclamation: O arquivo config está em formato **"json"**. 
 
