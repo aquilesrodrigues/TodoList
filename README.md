@@ -179,10 +179,7 @@
     ~~~Javascript
         const express = require("express");
         const app = express();
-
     ...
-
-    ~~~Javascript
         const bodyParser = require("body-parser");
         app.use(bodyParser.urlencoded({extended: true}));
         app.use(bodyParser.json());
@@ -226,11 +223,6 @@
 
         mkdir controllers models routes
 
-    ~~~
-
-    ~~~Javascript
-
-    const routes = require("./src/api/routes/usuarioRoutes.js")
     ~~~
 
     > :vertical_traffic_light: **api**: Esta pasta contém toda a parte lógica e estrutural de nossa aplicação, é nela que definimos nossos _controllers, models, routes, enums, util, helpers_.
