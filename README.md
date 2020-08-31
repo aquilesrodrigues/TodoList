@@ -172,9 +172,19 @@
 
     ---
 
-10. Usar o bodyParser.js
+10. Usar o bodyParser
 
     :left_speech_bubble: _Aproveitando os recursos disponibilizados pelo Framework Express vamos novamente incrementar o server.js_
+
+    ~~~Javascript
+        const express = require("express");
+        const bodyParser = require("body-parser");
+        const app = express();
+        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.json());
+    ~~~
+
+    ...
 
     ~~~Javascript
 
@@ -183,7 +193,7 @@
         app.use(bodyParser.json());
     ~~~
 
-    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos usar o BodyParser para melhorar os processos das requisições, através do express com o seu módulo **app.use()** que irá receber os recursos do bodyParser.
+    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos usar o BodyParser para melhorar os processos das requisições:, através do express com o seu módulo **app.use()** que irá receber os recursos do bodyParser.
 
     ---
 
@@ -197,7 +207,9 @@
     .get((req, res)=>{res.send("API todoList - Certo no método GET")})
     ~~~
 
-    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir o **app.route()**. Teremos nossa primeira rota que é do tipo **“get”**. Ela é composta de dois parâmetros, o primeiro é o endereço da nossa rota, no caso a raiz da aplicação **.route("/)**, já o segundo é uma função de retorno, que recebe também dois parâmetros o **“req”** (requisição) e o **“res”** (resposta), nessa função retornamos uma simples mensagem com o método **“send”** do Express.
+    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir o **app.route()**, abaixo das requisições: . Teremos nossa primeira rota que é do tipo **“get”**. Ela é composta de dois parâmetros, o primeiro é o endereço da nossa rota, no caso a raiz da aplicação **.route("/)**, já o segundo é uma função de retorno, que recebe também dois parâmetros o **“req”** (requisição) e o **“res”** (resposta), nessa função retornamos uma simples mensagem com o método **“send”** do Express.
+
+    :exclamation: certifique-se de que instalou o módulo npm denominado 'body-parser' chamando: **npm install body-parser --save** e 
 
     ---
 
@@ -462,6 +474,20 @@
 
     ---
 
+23. UsuariosController.js
+
+    :left_speech_bubble: _i._
+
+    ~~~Javascript
+
+       npx sequelize db:migrate
+    ~~~
+
+    > :v.
+
+    :exclamation: O .
+
+    ---
 
 fim de bloco
     Coluna 1 | Coluna 2

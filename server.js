@@ -1,15 +1,16 @@
-const express = require('express');
-const app = express();
+const express = require("express");
 const bodyParser = require("body-parser");
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); 
+
 const port = process.env.PORT || 3000;
 const routes = require("./src/api/routes/usuarioRoutes.js")
 
-routes(app);
-
 app.listen(port);
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
-/*Rota raiz.*/
+
+/*Usar sempre depois dos demais app.useRota raiz.*/
+routes(app);
 app.route('/').get((req, res)=>{res.send('API todoList - Certo no método GET')});
 
 
