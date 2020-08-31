@@ -1,9 +1,9 @@
-const Usuario = require("../models").Usuario
+const UsuarioC = require("../models").Usuario
 
 /*Acesso ao banco,verificação etc..*/
 exports.listAll = (req, res) =>{
-   Usuario.findAll().then(usuarios=>{
-    res.send(usuarios);  
+   UsuarioC.findAll().then(usuariosC=>{
+    res.send(usuariosC);  
    }).catch(error=>{
        
    })
@@ -11,10 +11,10 @@ exports.listAll = (req, res) =>{
 }
 
 exports.createone = (req, res) =>{
-   console.log(Usuario)
+   console.log(UsuarioC)
    const {nome,email} = req.body
-   Usuario.create({nome,email}).then(usuario=>{
-       res.send(usuario)
+   UsuarioC.create({nome,email}).then(UsuarioC=>{
+       res.send(UsuarioC)
    }).catch(error=>{
        res.send(error)
    })
