@@ -178,22 +178,23 @@
 
     ~~~Javascript
         const express = require("express");
-        const bodyParser = require("body-parser");
         const app = express();
-        app.use(bodyParser.urlencoded({ extended: true }));
-        app.use(bodyParser.json());
-    ~~~
 
     ...
 
     ~~~Javascript
-
         const bodyParser = require("body-parser");
         app.use(bodyParser.urlencoded({extended: true}));
         app.use(bodyParser.json());
     ~~~
 
-    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos usar o BodyParser para melhorar os processos das requisições:, através do express com o seu módulo **app.use()** que irá receber os recursos do bodyParser.
+    > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos usar o BodyParser após a requisição: **express** , através do express com o seu módulo **app.use()** que iremos receber os recursos do bodyParser.
+
+    :exclamation: certifique-se de que instalou o módulo npm denominado 'body-parser' chamando:
+
+    ~~~Javascript
+    npm install body-parser --save
+    ~~~
 
     ---
 
@@ -209,7 +210,7 @@
 
     > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir o **app.route()**, abaixo das requisições: . Teremos nossa primeira rota que é do tipo **“get”**. Ela é composta de dois parâmetros, o primeiro é o endereço da nossa rota, no caso a raiz da aplicação **.route("/)**, já o segundo é uma função de retorno, que recebe também dois parâmetros o **“req”** (requisição) e o **“res”** (resposta), nessa função retornamos uma simples mensagem com o método **“send”** do Express.
 
-    :exclamation: certifique-se de que instalou o módulo npm denominado 'body-parser' chamando: **npm install body-parser --save** e 
+    :exclamation: certifique-se de inserir route após as requisições anteriores: **express** e  **body-parser**
 
     ---
 
@@ -420,7 +421,7 @@
 
     > :vertical_traffic_light:  Iremos trabalhar com SQLlite e por iremos modificar o arquivo acima :point_up: pelo modelo
 
-    :exclamation: O arquivo config está em formato **"json"**. 
+    :exclamation: O arquivo config está em formato **"json"**.
 
     ~~~json
     {
@@ -499,5 +500,3 @@ fim de bloco
 >conteúdo a ser inserido :green_circle:
 > :triangular_flag_on_post: conteúdo a ser inserido
 [TodoList-PROJ](https://github.com/aquilesrodrigues/TodoList).
-
-![tabela-usuário](https://drive.google.com/file/d/15siQIgtxevJfMfEgKzCnAVAfiwNvg2VD/view?usp=sharing)
