@@ -48,14 +48,13 @@
 
 3. Criar arquivo .GITIGNORE
 
-    :left_speech_bubble: _.gitignore - informa ao git para não commitar os caminhos, arquivos e outras informações que forem representados dentro do arquivo.
+    :left_speech_bubble: *.gitignore* - informa ao git para não commitar os caminhos, arquivos e outras informações que forem representados dentro do arquivo.
 
     ~~~Javascript
-
         node_modules/
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto criar o arquivo .gitignore e dentro dele inserir a linha node_modules/
+    > :vertical_traffic_light: Em seu editor de texto criar o arquivo .gitignore e dentro dele inserir a linha _node_modules/_
     >Como saída teremos o arquvo .gitignore com suas configurações básicas.
 
     ---
@@ -69,9 +68,9 @@
         npm i -S express
     ~~~
 
-    > :vertical_traffic_light: Como saída teremos uma pasta **/node_modules** contendo o pacote instalado e todos as demais dependências, também o arquivo _package-lock.json_ e o _server.js_.
+    > :vertical_traffic_light: No shell devemos digitar a linha acima :point_up: para instalação. Como saída teremos uma pasta **/node_modules** contendo o pacote instalado e todos as demais dependências. Também o arquivo _package-lock.json_ e o _server.js_.
 
-    :exclamation: O Registro abaixo :point_down: foi criado dentro do arquivo **package.json**.
+    :exclamation: O Registro abaixo :point_down: foi criado dentro do arquivo **package.json** automaticamente.
 
     ~~~JavaScript
         "dependencies": {
@@ -100,7 +99,7 @@
         console.log("servidor funcionando")
     ~~~
 
-    > :vertical_traffic_light: em seu editor de texto, criar ou editar o arquivo server.js e inserir o código acima. Vamos declarar duas constantes. A primeira importa o express e a segunda recebe o objeto **express()**. na constante criada **app**, vamos passar a porta **3001**, através do método **listen()** e para facilictar a visualização do que está acontecendo vamos gerar uma mensagem de que está tudo bem através do console.log.
+    > :vertical_traffic_light: em seu editor de texto, criar ou editar o arquivo server.js e inserir o código acima. Vamos declarar duas constantes. A primeira importa o express e a segunda recebe o objeto **express()**. na instância criada **app**, vamos passar a porta **3001**, através do método **listen()** e para facilictar a visualização do que está acontecendo vamos gerar uma mensagem de que está "tudo bem" através do **console.log**.
 
     ---
 
@@ -109,8 +108,7 @@
     :left_speech_bubble: _esse módulo é o utilitário que irá monitorar todas as alterações nos arquivos de nossa aplicação e reiniciar automaticamente o servidor quando for necessário._
 
     ~~~Shell
-
-    npm i -D nodemon
+        npm i -D nodemon
     ~~~
 
     > :vertical_traffic_light: a cada alteração que fazemos em um arquivo, precisamos reiniciar a aplicação com o comando node script ou script.js. O **-D** serve para informar que queremos sua execução apenas em modo desenvolvimento. Para rodar nossos scripts no shell basta digitar _nodemon script.js_.
@@ -125,7 +123,7 @@
 
     ---
 
-7. Inicializando o Nodemon
+7. Configurando o Nodemon
 
     :left_speech_bubble: _Assim que iniciamos o NPM será lido o arquivo **package.json** ele contém vários blocos para serem carregados junto com o node._
 
@@ -137,13 +135,13 @@
     },
     ~~~
 
-    > :vertical_traffic_light: O que iremos fazer é inserir dentro do bloco "scripts" uma álias **start** que ao ser chamada no shell junto com o comando node irá executar o sua declaração: "start": **"nodemon server.js"**.
+    > :vertical_traffic_light: O que iremos fazer é inserir dentro do bloco "scripts" uma álias **start** que ao ser chamada no shell junto com o comando node irá executar o sua declaração: _"start"_: **"nodemon server.js"**.
 
     :exclamation: O script **"start": "nodemon server.js"** foi criado dentro do bloco **"script"** no arquivo **package.json**.
 
     ---
 
-8. Reinicializando através da nova álias criada
+8. Inicializando o nodemon
 
     :left_speech_bubble: _Como NPM támbem é responsável pela gerencia de dependências do projeto vamos chamá-lo para executar o script "start"._
 
@@ -179,10 +177,15 @@
     ~~~Javascript
         const express = require("express");
         const app = express();
+        const port = process.env.PORT || 3000;
+        const routes = require("./src/api/routes/usuarioRoutes.js")
     ...
         const bodyParser = require("body-parser");
-        app.use(bodyParser.urlencoded({extended: true}));
-        app.use(bodyParser.json());
+        app.use(bodyParser.json()); 
+        app.use(bodyParser.urlencoded({ extended: true }));
+    ...
+        app.listen(port);
+
     ~~~
 
     > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos usar o BodyParser após a requisição: **express** , através do express com o seu módulo **app.use()** que iremos receber os recursos do bodyParser.
@@ -200,9 +203,7 @@
     :left_speech_bubble: _Inserir a primeira rota básica apenas para informar que a rota está funcionando_
 
     ~~~Javascript
-
-    app.route("/")
-    .get((req, res)=>{res.send("API todoList - Certo no método GET")})
+        app.route('/').get((req, res)=>{res.send('API todoList - Certo no método GET')});
     ~~~
 
     > :vertical_traffic_light: em seu editor de texto, vamos alterar o arquivo **server.js** vamos inserir o **app.route()**, abaixo das requisições: . Teremos nossa primeira rota que é do tipo **“get”**. Ela é composta de dois parâmetros, o primeiro é o endereço da nossa rota, no caso a raiz da aplicação **.route("/)**, já o segundo é uma função de retorno, que recebe também dois parâmetros o **“req”** (requisição) e o **“res”** (resposta), nessa função retornamos uma simples mensagem com o método **“send”** do Express.
@@ -235,46 +236,46 @@
     :left_speech_bubble: _No arquivo usuarioRoutes.js vamos apontar para o controller Usuário_
 
     ~~~Javascript
-
-    module.exports = function(app){
-        const usuarios = require('../controllers/usuariosController.js')
-        app.route('/usuarios')
-        .get(usuarios.listAll)
-        .post(usuarios.createOne)
-    }
+        module.exports = function(app){
+            const usuarioR = require("../controllers/usuariosController.js")
+            app.route("/usuarios")
+            .get(usuarioR.listartodos)
+            .post(usuarioR.criaregistro)
+        }
     ~~~
 
-    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** em **./src/api/routes** internamente usar o módulo exports para declarar a função com a rota **../controllers/usuariosController.js** e o evento **/usuarios** com os médotos **get** e **post**.
+    > :vertical_traffic_light: Em seu editor de texto, vamos criar o arquivo **usuarioRoutes.js** em **./src/api/routes** internamente usar o **modulo.exports** para disponibilizar a função para outros arquivos. Instanciar o objeto  **usuarioR** chamadno o arquivo (**usuariosController.js**)) em **../controllers/** passando os médotos **get**(_listartodos_) e **post**(_criarregistro_).
+
+    ---
+
+    > Após criar o arquivo _usuarioRoutes.js_, retornar ao **server.js** e inserir a chamada para a função **app** logo abaixo das instância **app.** conforme script abaixo :point_down:
+
+    ~~~Javascript
+        routes(app);
+    ~~~
+
+    :exclamation: Observe que instanciamos o objeto usuarios apontando para um arquivo que ainda não existe "_../controllers/usuariosController.js_", é o que vamos fazer logo abaixo.
 
     ---
 14. Editando Controller
 
-    :left_speech_bubble: _No arquivo usuariosController.js vamos criar os primeiros registros a serem exibidos_
+    :left_speech_bubble: _No arquivo usuariosController.js vamos criar duas funções: a primeira listas os registros e a segundo criar registros_
 
     ~~~javascript
 
-        exports.listAll = (req, res) => {
-        let usuarios =
-        [
-            {
-                nome: 'teste 01',
-                email: 'teste@email.com'
-            },
-            {
-                nome: 'teste 02',
-                email: 'teste2@email.com'
-            }
-        ]
-        res.send(usuarios)
+        exports.listartodos = (req, res) =>{
+          UsuarioC.findAll().then(usuariosC=>{
+                res.send(usuariosC);  
+          }).catch(error=>{ })
+
         }
 
-        exports.createOne = (req, res) => {
-        let response = {
-            message: 'Usuário criado com sucesso',
-            data: req.body
-        }
-        res.send(response)
-
+        exports.criaregistro = (req, res) =>{
+          console.log(UsuarioC)
+          const {nome,email} = req.body
+          UsuarioC.create({nome,email}).then(UsuarioC=>{
+                res.send(UsuarioC)
+          }).catch(error=>{res.send(error)})
 
         }
     ~~~
@@ -466,6 +467,7 @@
     :exclamation: O arquivo  file "src\database\config\config.json". foi acionado e estabelecida a conexão e na sequência o arquivo de banco de dados **./src/database/database.sqlite3"**  foi alterado com a inclusão da tabela usuario.
 
     ---
+
 
 23. UsuariosController.js
 
