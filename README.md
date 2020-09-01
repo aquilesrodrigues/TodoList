@@ -181,7 +181,7 @@
         const routes = require("./src/api/routes/usuarioRoutes.js")
     ...
         const bodyParser = require("body-parser");
-        app.use(bodyParser.json()); 
+        app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
     ...
         app.listen(port);
@@ -467,7 +467,6 @@
     :exclamation: O arquivo  file "src\database\config\config.json". foi acionado e estabelecida a conexão e na sequência o arquivo de banco de dados **./src/database/database.sqlite3"**  foi alterado com a inclusão da tabela usuario.
 
     ---
-
 
 23. UsuariosController.js
 
