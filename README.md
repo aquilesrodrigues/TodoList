@@ -5,24 +5,29 @@
 ### Preparação do ambiente de trabalho
 
 - [x] 1. Preparar ambiente do projeto **NODE**
-- [x] 2. Iniciar um projeto Node
+- [x] 2. Iniciar projeto NODE
 - [x] 3. Criar arquivo .GITIGNORE
 - [x] 4. Instalar o EXPRESS
 - [x] 5. Criar/Editar SERVER.JS
 - [x] 6. Instalar o Nodemon
-- [x] 7. Inicializando o Nodemon
-- [x] 8. Reinicializando através da nova álias criada
+- [x] 7. Configurando o Nodemon
+- [x] 8. Inicializando o nodemon
 - [x] 9. Melhorando o server.js
-- [x] 10. Usar o bodyParser.js
+- [x] 10. Usar o bodyParser
 - [x] 11. Rotas com Express
 - [x] 12. Informando o caminho da aplicação
 - [x] 13. Editando Rota e chamando o controller
 - [x] 14. Editando Controller
-- [x] 15.
-- [x] 16.
-- [x] 17.
-- [x] 18.
-- [x] 19.
+- [x] 15. SqlLITE BANCO DE DADOS
+- [x] 16. Sequelize
+- [x] 17. Sequelize CLI
+- [x] 18. .sequelizerc
+- [x] 19. Iniciar o sequelize
+- [x] 20. Conexão com Banco SQLite
+- [x] 21. Modelo associativo da TABELA no Sequelize
+- [x] 22. Migrando Tabela modelo para o banco
+- [x] 23. 
+- [x] 24. 
 - [0] item incompleto.
 
     ---
@@ -282,7 +287,7 @@
 
 15. SqlLITE BANCO DE DADOS
 
-    :left_speech_bubble: _Como estamos em fase de modelagem vamos trabalhar inicialmentoecom SQLite._
+    :left_speech_bubble: _Como estamos em fase de modelagem vamos trabalhar inicialmente com SQLite._
 
     SQLite
 
