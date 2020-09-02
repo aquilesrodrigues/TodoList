@@ -457,7 +457,7 @@
     :exclamation: **.//src/database/migrations/"timestamp"-create-usuario.js"** não deve ser alterado. Nele consta detalhes da operação realizada, se foi operação de criação e seu timestamp.
     **timestamp**: representa um ponto específico na linha do tempo e leva em consideração o fuso horário em questão (UTC). Com isto, teremos sempre o detalhamento perante a linha do tempo real.
     ...
-    :exclamation: "POR PADRÃO" o SEQUELIZE cria o nome da tabela no plural. Quando executei o comando **(...model:generate --name usuario ...)** foi criado o arquivo em _.//src/database/migrations/"timestamp"-create-usuario.js_ nele constava "**ueryInterface.createTable('Usuarios')**, { "**U**suário**s**" - a primeira letra em maiúscula e o acrescimo do 's' no final }. 
+    :exclamation: "POR PADRÃO" o SEQUELIZE cria o nome da tabela no plural. Quando executei o comando **(...model:generate --name usuario ...)** foi criado o arquivo em _.//src/database/migrations/"timestamp"-create-usuario.js_ nele constava "**queryInterface.createTable('Usuarios')**, { "**U**suário**s**" - a primeira letra em maiúscula e o acrescimo do 's' no final }. 
 
     ---
 22. Migrando Tabela modelo para o banco
@@ -469,7 +469,7 @@
        npx sequelize db:migrate
     ~~~
 
-    > :vertical_traffic_light: O arquivo "**src\database\config\config.json**". foi acionado e estabelecida a conexão e na sequência o arquivo de banco de dados "**./src/database/database.sqlite3**" foi alterado com a inclusão da tabela usuario.
+    > :vertical_traffic_light: O arquivo "**src\database\config\config.json**", foi acionado e estabelecida a conexão e na sequência o arquivo de banco de dados "**./src/database/database.sqlite3**" foi alterado com a inclusão da tabela usuario.
 
     ---
 
@@ -492,7 +492,7 @@
 
     :left_speech_bubble: _Vamos alterar o arquivo migração criado por nós._ 
 
-    > :vertical_traffic_light: Vamos abrir o arquivo **src/database/migrations/timestamp-usuario-add-senha.js**. em um editor de texto e inserir o script abaixo :point_down:, que tem o nome da tabela "**Usuarios**" e o novo campo "**senha**" declarados
+    > :vertical_traffic_light: Vamos abrir o arquivo **src/database/migrations/timestamp-usuario-add-senha.js**. Em um editor de texto inserir o script abaixo :point_down:, que tem o nome da tabela "**Usuarios**" e o novo campo "**senha**" declarados
 
     ~~~Javascript
 
