@@ -559,8 +559,8 @@ fim de bloco
     :-------------- | :--------------
     exemplo 1 | Exemplo 2
 
->No momento todo o trabalho está a cargo de @aquilesrodrigues
+>No momento todo o trabalho está a cargo de 
 >E-mail :e-mail: aquiles.silva@a.ficr.edu.br
->conteúdo a ser inserido :green_circle:
-> :triangular_flag_on_post: conteúdo a ser inserido
+>:green_circle: Foi criado o Grupo 25 - Para dar continuidade ao projeto
+> :triangular_flag_on_post: Trabalho foi desenvolvido como modelo de aprendizagem por @aquilesrodrigues
 [TodoList-PROJ](https://github.com/aquilesrodrigues/TodoList).
