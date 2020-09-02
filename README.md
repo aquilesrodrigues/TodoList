@@ -30,7 +30,7 @@
 - [x] 24. Alterando o arquivo migration
 - [x] 25. 25. Enviando para o banco físico
 - [x] 26. Nova Tabela **Lista** no Sequelize
-- [x] 27. 
+- [x] 27.
 - [0] item incompleto.
 
     ---
@@ -449,7 +449,8 @@
        npx sequelize model:generate --name Usuarios --attributes nome:string,email:string
     ~~~
 
-    > :vertical_traffic_light:  O comando acima :point_up: vai gerar 2 arquivos: o _model ==> **./src/api/models/usuarios.js**_ e o _migration ==> **.//src/database/migrations/"timestamp"-create-usuarios.js"**_.
+    >:vertical_traffic_light:  O comando acima :point_up: vai gerar 2 arquivos: o_model ==> **./src/api/models/usuarios.js** migration ==> **.//src/database/migrations/"timestamp"-create-usuarios.js"**_.
+
     ...
     > o Arquivo usuarios.js - é o modelo associativo do sequelize para com o banco. </br>
     > O Arquivo "timestamp"-create-usuario.js internamente possui dois atributos a mais inseridos pelo próprio sequelize que é **(createdAt / updatedAt)** garantindo informaçoes sobre criação e atualização de cada registro na tabela.
@@ -457,7 +458,7 @@
     :exclamation: **.//src/database/migrations/"timestamp"-create-usuario.js"** não deve ser alterado. Nele consta detalhes da operação realizada, se foi operação de criação e seu timestamp.
     **timestamp**: representa um ponto específico na linha do tempo e leva em consideração o fuso horário em questão (UTC). Com isto, teremos sempre o detalhamento perante a linha do tempo real.
     ...
-    :exclamation: "POR PADRÃO" o SEQUELIZE cria o nome da tabela no plural. Quando executei o comando **(...model:generate --name usuario ...)** foi criado o arquivo em _.//src/database/migrations/"timestamp"-create-usuario.js_ nele constava "**queryInterface.createTable('Usuarios')**, { "**U**suário**s**" - a primeira letra em maiúscula e o acrescimo do 's' no final }. 
+    :exclamation: "POR PADRÃO" o SEQUELIZE cria o nome da tabela no plural. Quando executei o comando **(...model:generate --name usuario ...)** foi criado o arquivo em _.//src/database/migrations/"timestamp"-create-usuario.js_ nele constava "**queryInterface.createTable('Usuarios')**, { "**U**suário**s**" - a primeira letra em maiúscula e o acrescimo do 's' no final }.
 
     ---
 22. Migrando Tabela modelo para o banco
@@ -490,7 +491,7 @@
 
 24. Fazendo a alteração no arquivo migration
 
-    :left_speech_bubble: _Vamos alterar o arquivo migração criado por nós._ 
+    :left_speech_bubble: _Vamos alterar o arquivo migração criado por nós._
 
     > :vertical_traffic_light: Vamos abrir o arquivo **src/database/migrations/timestamp-usuario-add-senha.js**. Em um editor de texto inserir o script abaixo :point_down:, que tem o nome da tabela "**Usuarios**" e o novo campo "**senha**" declarados
 
@@ -555,11 +556,12 @@
     ---
 
 fim de bloco
-    Coluna 1 | Coluna 2
-    :-------------- | :--------------
-    exemplo 1 | Exemplo 2
 
->No momento todo o trabalho está a cargo de 
+Coluna 1 | Coluna 2
+:-------------- | :--------------
+exemplo 1 | Exemplo 2
+
+>No momento todo o trabalho está a cargo de
 >E-mail :e-mail: aquiles.silva@a.ficr.edu.br
 >:green_circle: Foi criado o Grupo 25 - Para dar continuidade ao projeto
 > :triangular_flag_on_post: Trabalho foi desenvolvido como modelo de aprendizagem por @aquilesrodrigues
