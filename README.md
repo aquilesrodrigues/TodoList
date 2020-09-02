@@ -555,12 +555,6 @@
 
     ---
 
-fim de bloco
-
-Coluna 1 | Coluna 2
-:-------------- | :--------------
-exemplo 1 | Exemplo 2
-
 >No momento todo o trabalho está a cargo de
 >E-mail :e-mail: aquiles.silva@a.ficr.edu.br
 ---
