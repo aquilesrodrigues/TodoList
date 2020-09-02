@@ -26,8 +26,11 @@
 - [x] 20. Conexão com Banco SQLite
 - [x] 21. Modelo associativo da TABELA no Sequelize
 - [x] 22. Migrando Tabela modelo para o banco
-- [x] 23. 
-- [x] 24. 
+- [x] 23. Criando migração
+- [x] 24. Alterando o arquivo migration
+- [x] 25. 25. Enviando para o banco físico
+- [x] 26. Nova Tabela **Lista** no Sequelize
+- [x] 27. 
 - [0] item incompleto.
 
     ---
@@ -267,6 +270,7 @@
     :left_speech_bubble: _No arquivo usuariosController.js vamos criar duas funções: a primeira listas os registros e a segundo criar registros_
 
     ~~~javascript
+    const UsuarioC = require("../models").Usuarios
 
         exports.listartodos = (req, res) =>{
           UsuarioC.findAll().then(usuariosC=>{
@@ -309,10 +313,6 @@
 
     npm i -S tedious
     ~~~
-
-    > :vertical_traffic_light:  um .
-
-    :exclamation: Referências: dfdf
 
     ---
 
@@ -446,16 +446,18 @@
 
     ~~~Shell
 
-       npx sequelize model:generate --name Usuario --attributes nome:string,email:string
+       npx sequelize model:generate --name Usuarios --attributes nome:string,email:string
     ~~~
 
-    > :vertical_traffic_light:  O comando acima :point_up: vai gerar 2 arquivos: o model ==> **./src/api/models/usuario.js** e o migration ==> **.//src/database/migrations/"timestamp"-create-usuario.js"**.
+    > :vertical_traffic_light:  O comando acima :point_up: vai gerar 2 arquivos: o _model ==> **./src/api/models/usuarios.js**_ e o _migration ==> **.//src/database/migrations/"timestamp"-create-usuarios.js"**_.
     ...
-    > o Arquivo usuario.js - o modelo associativo do sequelize para com o banco. </br>
-    > O Arquivo "timestamp"-create-usuario.js internamente possui dois atributos a mais inseridos pelo próprio sequelize que é **(createdAt / updatedAt)** garantindo informaçoes sobre creação e atualizações de cada registro na tabela.
+    > o Arquivo usuarios.js - é o modelo associativo do sequelize para com o banco. </br>
+    > O Arquivo "timestamp"-create-usuario.js internamente possui dois atributos a mais inseridos pelo próprio sequelize que é **(createdAt / updatedAt)** garantindo informaçoes sobre criação e atualização de cada registro na tabela.
 
     :exclamation: **.//src/database/migrations/"timestamp"-create-usuario.js"** não deve ser alterado. Nele consta detalhes da operação realizada, se foi operação de criação e seu timestamp.
     **timestamp**: representa um ponto específico na linha do tempo e leva em consideração o fuso horário em questão (UTC). Com isto, teremos sempre o detalhamento perante a linha do tempo real.
+    ...
+    :exclamation: "POR PADRÃO" o SEQUELIZE cria o nome da tabela no plural. Quando executei o comando **(...model:generate --name usuario ...)** foi criado o arquivo em _.//src/database/migrations/"timestamp"-create-usuario.js_ nele constava "**ueryInterface.createTable('Usuarios')**, { "**U**suário**s**" - a primeira letra em maiúscula e o acrescimo do 's' no final }. 
 
     ---
 22. Migrando Tabela modelo para o banco
@@ -467,24 +469,88 @@
        npx sequelize db:migrate
     ~~~
 
-    > :v.
-
-    :exclamation: O arquivo  file "src\database\config\config.json". foi acionado e estabelecida a conexão e na sequência o arquivo de banco de dados **./src/database/database.sqlite3"**  foi alterado com a inclusão da tabela usuario.
+    > :vertical_traffic_light: O arquivo "**src\database\config\config.json**". foi acionado e estabelecida a conexão e na sequência o arquivo de banco de dados "**./src/database/database.sqlite3**" foi alterado com a inclusão da tabela usuario.
 
     ---
 
-23. UsuariosController.js
+23. Alterar Tabela
 
-    :left_speech_bubble: _i._
+    :left_speech_bubble: _migrations foram criadas para ser um controle de versionamento de um estado para outro dos bancos de dados._
+
+    ~~~Shell
+
+       npx sequelize migration:create --name usuario-add-senha
+    ~~~
+
+    > :vertical_traffic_light: Vamos para o shell e digitar a linha acima :point_up:. Será gerado o arquivo **src/database/migrations/timestamp-usuario-add-senha.js**.
+
+    :exclamation: Neste arquivo modelo iremos fazer algumas alterações antes de gravarmos no banco de dados.
+
+    ---
+
+24. Fazendo a alteração no arquivo migration
+
+    :left_speech_bubble: _Vamos alterar o arquivo migração criado por nós._ 
+
+    > :vertical_traffic_light: Vamos abrir o arquivo **src/database/migrations/timestamp-usuario-add-senha.js**. em um editor de texto e inserir o script abaixo :point_down:, que tem o nome da tabela "**Usuarios**" e o novo campo "**senha**" declarados
+
+    ~~~Javascript
+
+       'use strict';
+
+        module.exports = {
+        up: async (queryInterface, Sequelize) => {
+            return Promise.all([
+            queryInterface.addColumn(
+                'Usuarios',
+                'senha',
+                {
+                type: Sequelize.STRING
+                }
+            )
+
+            ]);
+        },
+
+        down: async (queryInterface, Sequelize) => {
+            return Promise.all([
+            queryInterface.removeColumn('Usuarios','senha')
+            ]);
+        }
+        };
+    ~~~
+
+    :exclamation: Neste arquivo iremos fazer algumas alterações nos módulos **up e down**. **UP** - é a função que indica o que modificar no banco de dados quando executarmos a migration e a **DOWN**, que funciona como um rollback, ou seja, tudo que for feito na up deve ser desfeito na down.
+
+    ---
+
+25. Enviando para o banco físico
+
+    :left_speech_bubble: _O Sequelize-cli irá popular na tabela **Usuarios** o campo senha declalarado no arquivo migration_
 
     ~~~Javascript
 
        npx sequelize db:migrate
     ~~~
 
-    > :v.
+    > :vertical_traffic_light:  O comando acima :point_up: migration ==> **.//src/database/migrations/"timestamp"-create-usuario.js"**.
 
-    :exclamation: O .
+    ---
+26. Nova Tabela **Lista** no Sequelize
+
+    :left_speech_bubble: _Criando um modelo associativo de uma tabela **Usuario** no no Sequelize. para ser posteriormente migrado para o banco de dados_
+
+    ~~~Shell
+
+       npx sequelize model:generate --name Listas --attributes titulo:string,usuarioId:integer
+    ~~~
+
+    > :vertical_traffic_light:  O comando acima :point_up: vai gerar 2 arquivos: o model ==> **./src/api/models/usuario.js** e o migration ==> **.//src/database/migrations/"timestamp"-create-usuario.js"**.
+    ...
+    > os models são a representação das tabelas do banco de dados em forma de classe.
+
+    :exclamation: **.//src/database/migrations/"timestamp"-create-usuario.js"** não deve ser alterado. Nele consta detalhes da operação realizada, se foi operação de criação e seu timestamp.
+    **timestamp**: representa um ponto específico na linha do tempo e leva em consideração o fuso horário em questão (UTC). Com isto, teremos sempre o detalhamento perante a linha do tempo real.
 
     ---
 

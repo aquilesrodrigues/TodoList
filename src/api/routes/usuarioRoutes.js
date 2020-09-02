@@ -1,6 +1,6 @@
 module.exports = function(app){
     const usuarioR = require("../controllers/usuariosController.js")
-    app.route("/usuarios")
+    app.route("/usuario")
     .get(usuarioR.listartodos)
     .post(usuarioR.criaregistro)
 }

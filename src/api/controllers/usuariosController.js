@@ -1,9 +1,9 @@
-const UsuarioC = require("../models").Usuario
+const UsuarioC = require("../models").Usuarios
 
 /*Acesso ao banco,verificação etc..*/
 exports.listartodos = (req, res) =>{
-   UsuarioC.findAll().then(usuariosC=>{
-    res.send(usuariosC);  
+   UsuarioC.findAll().then(usuarios=>{
+    res.send(Usuarios);  
    }).catch(error=>{
        
    })
@@ -13,8 +13,8 @@ exports.listartodos = (req, res) =>{
 exports.criaregistro = (req, res) =>{
    console.log(UsuarioC)
    const {nome,email} = req.body
-   UsuarioC.create({nome,email}).then(UsuarioC=>{
-       res.send(UsuarioC)
+   UsuarioC.create({nome,email}).then(Usuarios=>{
+       res.send(Usuarios)
    }).catch(error=>{
        res.send(error)
    })
