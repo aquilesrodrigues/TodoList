@@ -34,7 +34,9 @@ Estrangeira | simples |
 
 Categoria | Referencia | Objetivo | Utilização | Observação
 :---- |:---- |:---- |:---- |:----
-DDL| comandos que definem **OBJETOS** | Bancos, tabelas, visões | incluir, alterar e excluir. | Data Definition Language 
-DML| comandos que manipulam **DADOS** | trata diretamente com dados dos campos | incluir, alterar e excluir |  Alguns escritores inserem o SELECT aqui
+DDL| comandos que definem **OBJETOS** | Bancos, tabelas, visões, índice | create, alter e drop | Data Definition Language
+DML| comandos que manipulam **DADOS** | trata diretamente com dados dos campos | incluir, alterar e excluir |  Alguns escritores inserem o **SELECT** aqui
 DCL - Data Control Language | comandos de controle de nível de acesso de usuário | - | - | Data Control Language
-DTL  
+DQL | comando de execução de consultas | - | - | Data Query Languagem
+DTL | comandos de transações de dados | - | refazer, desfazer | Data Transaction Language
+
