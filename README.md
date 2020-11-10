@@ -180,7 +180,7 @@
 
 10. Usar o bodyParser
 
-    :left_speech_bubble: _Aproveitando os recursos disponibilizados pelo Framework Express vamos novamente incrementar o server.js_
+    :left_speech_bubble: _O body-parser é um módulo disponibilizado no Framework Express capaz de converter o body da requisição para vários formatos e justamente por isso vamos incrementar o server.js_
 
     ~~~Javascript
         const express = require("express");
@@ -188,9 +188,10 @@
         const port = process.env.PORT || 3000;
         const routes = require("./src/api/routes/usuarioRoutes.js")
     ...
+    // inserindo aqui o body-parse:
         const bodyParser = require("body-parser");
         app.use(bodyParser.json());
-        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.urlencoded({ extended: false }));
     ...
         app.listen(port);
 
